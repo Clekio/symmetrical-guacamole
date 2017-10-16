@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -389,6 +389,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1570844082 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1916097033896466, guid: e1eca3b3f45318f44abced8459b1866b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2126469710}
 --- !u!1 &1618712972
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +688,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4362137408851040, guid: e1eca3b3f45318f44abced8459b1866b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.3043691
+      value: -5.88
       objectReference: {fileID: 0}
     - target: {fileID: 4362137408851040, guid: e1eca3b3f45318f44abced8459b1866b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -691,7 +696,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4362137408851040, guid: e1eca3b3f45318f44abced8459b1866b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.4
+      value: -7.01
       objectReference: {fileID: 0}
     - target: {fileID: 4362137408851040, guid: e1eca3b3f45318f44abced8459b1866b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -713,6 +718,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54261460231819676, guid: e1eca3b3f45318f44abced8459b1866b,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 114881249540030396, guid: e1eca3b3f45318f44abced8459b1866b,
+        type: 2}
+      propertyPath: MainChar
+      value: 
+      objectReference: {fileID: 1570844082}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1eca3b3f45318f44abced8459b1866b, type: 2}
   m_IsPrefabParent: 0
