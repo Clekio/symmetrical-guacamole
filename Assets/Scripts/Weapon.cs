@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
         if (Pickable == true)
         {
@@ -34,8 +34,19 @@ public class Weapon : MonoBehaviour {
 
         }
 
+        if (Pickable == true)
+        {
+            if (XCI.GetButton(XboxButton.B, controller))
+            {
 
-	}
+                Destroy(this.gameObject);
+
+            }
+        }
+    }
+
+   
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -44,12 +55,7 @@ public class Weapon : MonoBehaviour {
         Pickable = true;
 
 
-        if (XCI.GetButton(XboxButton.B, controller))
-        {
 
-            Destroy(this.gameObject);
-
-        }
 
     }
 
