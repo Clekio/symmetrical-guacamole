@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -1761,17 +1762,22 @@ namespace XboxCtrlrInput
 			return r;
 		}
 
-		
-		#endif
+        public static bool GetButtonPressed(XboxButton x, XboxController controller)
+        {
+            throw new NotImplementedException();
+        }
 
-		// END of Windows only subsystem ==========================================
+
+#endif
+
+        // END of Windows only subsystem ==========================================
 
 
 
-		// -------------------------- Handler Script -------------------
+        // -------------------------- Handler Script -------------------
 
-		// Secret Private Script that does some maintainace work for XCI states. User should not use this script at all.
-		private class XciHandler : MonoBehaviour
+        // Secret Private Script that does some maintainace work for XCI states. User should not use this script at all.
+        private class XciHandler : MonoBehaviour
 		{
 			private static XciHandler instance = null;
 

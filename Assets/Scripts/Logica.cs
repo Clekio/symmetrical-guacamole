@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using XboxCtrlrInput;		// Para poder incluir en mando de Xbox
 
 public class Logica : MonoBehaviour 
 {
 
-	public float VelocidadMax;
+
+    public float VelocidadMax;
 	public XboxController controller;
 
 	private Vector3 newPosition;
@@ -13,6 +16,11 @@ public class Logica : MonoBehaviour
     public bool hasWeapon = false;
 
     public bool canWeapon = false;
+
+    public bool canAttack = true;
+
+    public GameObject weaponE;
+
 
 	void Update () 
 	{
@@ -38,9 +46,15 @@ public class Logica : MonoBehaviour
 
         if (hasWeapon == true)
         {
-            if (XCI.GetButton(XboxButton.X, controller))
+            if (XCI.GetButtonDown(XboxButton.X, controller))
             {
-                Debug.Log("pene");
+                if (canAttack == true)
+                {
+
+                    canAttack = false;
+                    StartCoroutine(Count1());
+
+                }
             }
             if (XCI.GetButton(XboxButton.Y, controller))
             {
@@ -63,6 +77,30 @@ public class Logica : MonoBehaviour
         }
 
 
+    } //Cierra update
+
+
+
+    IEnumerator Count1()
+    {
+        weaponE.SetActive(true);
+        
+        yield return new WaitForSeconds(0.2f);
+
+        yield return StartCoroutine(Count2());
+
     }
+
+    IEnumerator Count2()
+    {
+        
+
+        weaponE.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        canAttack = true;
+
+        yield return null;
+    }
+
 
 }
