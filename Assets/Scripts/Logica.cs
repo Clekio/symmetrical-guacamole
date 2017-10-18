@@ -11,7 +11,9 @@ public class Logica : MonoBehaviour
     public float VelocidadMax;
 	public XboxController controller;
 
+
 	private Vector3 newPosition;
+
 
     public bool hasWeapon = false;
 
@@ -19,14 +21,39 @@ public class Logica : MonoBehaviour
 
     public bool canAttack = true;
 
+
     public GameObject weaponE;
 
+    public Rigidbody throwable;
 
-	void Update () 
+    public GameObject player;
+
+
+    
+    public Transform spawn;
+
+
+    public float speed = 1040f;
+
+
+    private void Start()
+    {
+
+
+    }
+
+
+
+    void Update () 
 	{
 
-		// Movimiento del stick izquierdo
-		newPosition = transform.position;
+
+
+
+        
+
+        // Movimiento del stick izquierdo
+        newPosition = transform.position;
 		float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
 		float axisY = XCI.GetAxis(XboxAxis.LeftStickY, controller);
 		float newPosX = newPosition.x + (axisX * VelocidadMax * Time.deltaTime);
@@ -58,10 +85,21 @@ public class Logica : MonoBehaviour
             }
             if (XCI.GetButton(XboxButton.Y, controller))
             {
-                Debug.Log("pene");
+                if (canAttack == true)
+
+                {
+                    canAttack = false;
+                    hasWeapon = false;
+
+                    ThrowIt();
+
+
+                    Debug.Log("pene");
+                }
+            }
             }
 
-        }
+        
         else
         {
             if (canWeapon == true)
@@ -79,6 +117,16 @@ public class Logica : MonoBehaviour
 
     } //Cierra update
 
+
+    void ThrowIt()
+    {
+
+        Rigidbody lanzado = Instantiate (throwable, spawn.position, spawn.rotation) as Rigidbody;
+
+        lanzado.AddForce(spawn.transform.forward * speed);
+
+
+    }
 
 
     IEnumerator Count1()
