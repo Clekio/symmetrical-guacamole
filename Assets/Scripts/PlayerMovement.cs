@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using XboxCtrlrInput;		// Para poder incluir en mando de Xbox
 
@@ -7,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
 
 	public float VelocidadMax;
 	public XboxController controller;
+    public Animator animator;
+    public float desiredSpeed;
 
 	private Vector3 newPosition;
 
-	void Update () 
+    void Update () 
 	{
 
 		// Movimiento del stick izquierdo
@@ -32,6 +35,18 @@ public class PlayerMovement : MonoBehaviour
 		newPosition = new Vector3(newPosX, transform.position.y, newPosZ);
 		transform.position = newPosition;
 
-	}
+        if (XCI.GetButtonDown(XboxButton.B, controller))
+        {
+            StartCoroutine(Correr());
+        }
+    }
+    IEnumerator Correr()
+    {
+        VelocidadMax = VelocidadMax * 5;
+        animator.speed = 5;
+        yield return new WaitForSeconds(3f);
+        VelocidadMax = 5;
+        animator.speed = 1;
+    }
 
 }
