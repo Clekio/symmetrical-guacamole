@@ -5,8 +5,6 @@ using XboxCtrlrInput;		// Para poder incluir en mando de Xbox
 
 public class AtaqueAnim : MonoBehaviour
 {
-    Animator anim;
-
     public float VelocidadMax;
     public XboxController controller;
 
@@ -19,12 +17,6 @@ public class AtaqueAnim : MonoBehaviour
     public bool canAttack = true;
 
     public GameObject weaponE;
-
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
-
 
     void Update()
     {

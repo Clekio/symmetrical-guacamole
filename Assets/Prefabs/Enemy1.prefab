@@ -351,6 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4019659157962878}
   - component: {fileID: 95709061325045086}
+  - component: {fileID: 136600300614319398}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -1164,6 +1165,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!136 &136600300614319398
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437864466764956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.65
+  m_Height: 2.09
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.84, z: 0}
 --- !u!137 &137748334620238126
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
