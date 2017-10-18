@@ -1194,21 +1194,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2103181716 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1437864466764956, guid: 50a904a5a3b3cd448948ecc0b240f740,
-    type: 2}
-  m_PrefabInternal: {fileID: 322158679}
---- !u!136 &2103181719
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2103181716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.65
-  m_Height: 2.09
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.84, z: 0}

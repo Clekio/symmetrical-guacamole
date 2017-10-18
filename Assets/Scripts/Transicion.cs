@@ -35,8 +35,10 @@ public class Transicion : MonoBehaviour
     {
         transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         MainChar.GetComponent<PlayerMovement>().enabled = false;
+        MainChar.GetComponent<CapsuleCollider>().enabled = false;
         yield return new WaitForSeconds(2.2f);
         MainChar.GetComponent<PlayerMovement>().enabled = true;
+        MainChar.GetComponent<CapsuleCollider>().enabled = true;
         transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 }
