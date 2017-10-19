@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour {
 
     public XboxController controller;
 
+    public GameObject mainchar;
+
     public Logica coger;
 
     public bool Pickable = false;
@@ -22,7 +24,11 @@ public class Weapon : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		
+
+
+        
+        coger = mainchar.GetComponent<Logica>();
+
         if (Pickable == true)
         {
             coger.canWeapon = true;
@@ -54,17 +60,11 @@ public class Weapon : MonoBehaviour {
 
         Pickable = true;
 
-
-
-
     }
 
     private void OnTriggerExit(Collider other)
     {
 
         Pickable = false;
-            
-
-
     }
 }
