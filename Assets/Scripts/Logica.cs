@@ -77,6 +77,7 @@ public class Logica : MonoBehaviour
                     canAttack = false;
                     StartCoroutine(Count0());
 
+
                 }
             }
             if (XCI.GetButton(XboxButton.Y, controller))

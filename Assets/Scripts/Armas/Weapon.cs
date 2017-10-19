@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+
+
 	}
 	
 
