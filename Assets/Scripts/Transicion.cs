@@ -26,7 +26,7 @@ public class Transicion : MonoBehaviour
 
     if (XCI.GetButtonDown(XboxButton.X, controller))
         {
-            anim.Play("AtaqueHorizontal", -1, 0f);
+            //anim.Play("AtaqueHorizontal", -1, 0f);
             StartCoroutine(Congelar());
         }
     }
