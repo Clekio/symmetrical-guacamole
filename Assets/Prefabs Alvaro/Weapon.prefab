@@ -109,5 +109,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: 0
   mainchar: {fileID: 1916097033896466, guid: 090154c388db7654a915a36f744e908e, type: 2}
-  coger: {fileID: 0}
+  coger: {fileID: 114638805124745558, guid: 9d88c7f40e30a67429c9462a0254ea3c, type: 2}
   Pickable: 0
