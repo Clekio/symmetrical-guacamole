@@ -6,7 +6,7 @@ using XboxCtrlrInput;		// Para poder incluir en mando de Xbox
 
 public class Logica : MonoBehaviour 
 {
-
+    Animator anim;
 
     public float VelocidadMax;
 	public XboxController controller;
@@ -28,8 +28,10 @@ public class Logica : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject Axe;
 
-    
+
+
     public Transform spawn;
 
 
@@ -38,8 +40,7 @@ public class Logica : MonoBehaviour
 
     private void Start()
     {
-
-
+        anim = GetComponent<Animator>();
     }
 
 
@@ -67,11 +68,12 @@ public class Logica : MonoBehaviour
 
         if (hasWeapon == true)
         {
+            Axe.GetComponent<SkinnedMeshRenderer>().enabled = true;
             if (XCI.GetButtonDown(XboxButton.X, controller))
             {
                 if (canAttack == true)
                 {
-
+                    anim.Play("AtaqueHorizontal", -1, 0f);
                     canAttack = false;
                     StartCoroutine(Count0());
 
@@ -91,10 +93,10 @@ public class Logica : MonoBehaviour
                 }
             }
             }
-
         
         else
         {
+            Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
             if (canWeapon == true)
             {
                 if (XCI.GetButton(XboxButton.B, controller))
