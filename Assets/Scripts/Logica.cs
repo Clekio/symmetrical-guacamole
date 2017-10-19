@@ -46,12 +46,6 @@ public class Logica : MonoBehaviour
 
     void Update () 
 	{
-
-
-
-
-        
-
         // Movimiento del stick izquierdo
         newPosition = transform.position;
 		float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
@@ -79,7 +73,7 @@ public class Logica : MonoBehaviour
                 {
 
                     canAttack = false;
-                    StartCoroutine(Count1());
+                    StartCoroutine(Count0());
 
                 }
             }
@@ -88,13 +82,12 @@ public class Logica : MonoBehaviour
                 if (canAttack == true)
 
                 {
-                    canAttack = false;
+                    //canAttack = false;
                     hasWeapon = false;
 
                     ThrowIt();
 
 
-                    Debug.Log("pene");
                 }
             }
             }
@@ -128,6 +121,15 @@ public class Logica : MonoBehaviour
 
     }
 
+    IEnumerator Count0()
+    {
+
+
+        yield return new WaitForSeconds(0.8f);
+
+        yield return StartCoroutine(Count1());
+
+    }
 
     IEnumerator Count1()
     {
