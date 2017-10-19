@@ -35,7 +35,7 @@ public class Logica : MonoBehaviour
     public Transform spawn;
 
 
-    public float speed = 1040f;
+    public float speed;
 
 
     private void Start()
@@ -118,7 +118,9 @@ public class Logica : MonoBehaviour
 
         Rigidbody lanzado = Instantiate (throwable, spawn.position, spawn.rotation) as Rigidbody;
 
-        lanzado.AddForce(spawn.transform.forward * speed);
+        lanzado.velocity = transform.forward * speed;
+
+        
 
 
     }
