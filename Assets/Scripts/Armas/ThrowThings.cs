@@ -23,5 +23,8 @@ public class ThrowThings : MonoBehaviour {
     {
         Destroy(this.gameObject);
     }
-
+    public void OnTriggerEnter(Collider other)
+    {
+        Destroy(this.gameObject);
+    }
 }

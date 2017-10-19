@@ -26,8 +26,6 @@ public class Weapon : MonoBehaviour {
 	void FixedUpdate () {
 
 
-        
-        coger = mainchar.GetComponent<Logica>();
 
         if (Pickable == true)
         {
