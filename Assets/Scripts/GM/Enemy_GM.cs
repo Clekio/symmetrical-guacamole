@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Enemy_GM: MonoBehaviour {
 
+    Animator anim;
+
+    public GameObject Enemigo;
     public GameObject drop;
 
     public Logica_GM romperArma;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        anim = Enemigo.GetComponent<Animator>();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -27,8 +30,10 @@ public class Enemy_GM: MonoBehaviour {
         drop.SetActive(true);
 
         romperArma.hasWeapon = false;
+        GetComponent<Collider>().enabled = false;
+        anim.Play("Dying", -1, 0f);
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
 
     }
 }
