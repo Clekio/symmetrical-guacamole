@@ -30,7 +30,8 @@ public class Enemy_GM: MonoBehaviour {
         drop.SetActive(true);
 
         romperArma.hasWeapon = false;
-        GetComponent<Collider>().enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = true;
         anim.Play("Dying", -1, 0f);
 
         //Destroy(this.gameObject);
