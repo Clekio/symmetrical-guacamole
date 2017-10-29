@@ -11,9 +11,12 @@ public class Enemy_GM: MonoBehaviour {
 
     public Logica_GM romperArma;
 
-	// Use this for initialization
-	void Start () {
+    //private Rigidbody rBody; Haciendo pruebas para cuando muere
+
+    // Use this for initialization
+    void Start () {
         anim = Enemigo.GetComponent<Animator>();
+        //rBody = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
@@ -32,6 +35,7 @@ public class Enemy_GM: MonoBehaviour {
         romperArma.hasWeapon = false;
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<BoxCollider>().enabled = true;
+        //rBody.detectCollisions = false;
         anim.Play("Dying", -1, 0f);
 
         //Destroy(this.gameObject);
