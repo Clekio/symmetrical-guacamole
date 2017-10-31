@@ -57,14 +57,6 @@ public class Logica : MonoBehaviour
 		transform.position = newPosition;
 
 
-		// Movimiento del stick derecho
-		newPosition = transform.position;
-		axisX = XCI.GetAxis(XboxAxis.RightStickX, controller);
-		axisY = XCI.GetAxis(XboxAxis.RightStickY, controller);
-		newPosX = newPosition.x + (axisX * VelocidadMax * 0.3f * Time.deltaTime);
-		newPosZ = newPosition.z + (axisY * VelocidadMax * 0.3f * Time.deltaTime);
-		newPosition = new Vector3(newPosX, transform.position.y, newPosZ);
-		transform.position = newPosition;
 
         if (hasWeapon == true)
         {
@@ -84,9 +76,10 @@ public class Logica : MonoBehaviour
                 if (canAttack == true)
 
                 {
-                    //canAttack = false;
+                    canAttack = false;
                     hasWeapon = false;
 
+                    StartCoroutine(Count3());
                     ThrowIt();
 
 
@@ -101,7 +94,7 @@ public class Logica : MonoBehaviour
             {
                 if (XCI.GetButton(XboxButton.B, controller))
                 {
-                    hasWeapon = true;
+                    //hasWeapon = true;
 
 
 
@@ -121,6 +114,7 @@ public class Logica : MonoBehaviour
         lanzado.velocity = transform.forward * speed;
 
         
+
 
 
     }
@@ -156,5 +150,13 @@ public class Logica : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator Count3()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        canAttack = true;
+
+        yield return null;
+    }
 
 }
