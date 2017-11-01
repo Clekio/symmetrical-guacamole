@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1831060545449482}
   m_IsPrefabParent: 1
+--- !u!1 &1493680122549856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4184507757067476}
+  - component: {fileID: 23487705899568108}
+  - component: {fileID: 33365446849796344}
+  m_Layer: 9
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1831060545449482
 GameObject:
   m_ObjectHideFlags: 0
@@ -19,9 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4311560112252610}
-  - component: {fileID: 33628900487436564}
   - component: {fileID: 65433244034474570}
-  - component: {fileID: 23148712140951392}
   - component: {fileID: 114144028732181712}
   - component: {fileID: 54190396437801510}
   - component: {fileID: 65786529970593752}
@@ -32,6 +47,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4184507757067476
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1493680122549856}
+  m_LocalRotation: {x: -0.15836051, y: -0.16965051, z: -0.6505521, w: 0.723134}
+  m_LocalPosition: {x: -3.92, y: 2.41, z: -1.41}
+  m_LocalScale: {x: 2.5265973, y: 2.1402013, z: 1.2447665}
+  m_Children: []
+  m_Father: {fileID: 4311560112252610}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -26.729002, y: -2.523, z: -83.351006}
 --- !u!4 &4311560112252610
 Transform:
   m_ObjectHideFlags: 1
@@ -39,18 +67,19 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831060545449482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 37.390705, y: 1.898, z: 25.607779}
   m_LocalScale: {x: 0.4692099, y: 0.33584857, z: 1.24566}
-  m_Children: []
+  m_Children:
+  - {fileID: 4184507757067476}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23148712140951392
+--- !u!23 &23487705899568108
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1831060545449482}
+  m_GameObject: {fileID: 1493680122549856}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +88,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 82914dcf35713f945b8b68cbe5e7618c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -67,7 +96,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -79,13 +108,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33628900487436564
+--- !u!33 &33365446849796344
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1831060545449482}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 1493680122549856}
+  m_Mesh: {fileID: 4300000, guid: fbae0aec2a681ed4f8f635f342ce4d0a, type: 3}
 --- !u!54 &54190396437801510
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -111,8 +140,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.125744, y: 1, z: 1.0598601}
-  m_Center: {x: -0.015058811, y: 0, z: 0.029930083}
+  m_Size: {x: 1.125744, y: 1, z: 2.0504482}
+  m_Center: {x: -0.015058811, y: 0, z: 0.16582079}
 --- !u!65 &65786529970593752
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -123,8 +152,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7, z: 0.7}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7, y: 0.7, z: 1.8624663}
+  m_Center: {x: 0, y: 0, z: 0.12189846}
 --- !u!114 &114144028732181712
 MonoBehaviour:
   m_ObjectHideFlags: 1

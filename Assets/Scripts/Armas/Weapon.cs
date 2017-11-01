@@ -38,12 +38,13 @@ public class Weapon : MonoBehaviour {
 
         }
 
-        if (Pickable == true)
+        if (Pickable == true && coger.hasWeapon == false)
         {
             if (XCI.GetButton(XboxButton.B, controller))
             {
                 coger.canWeapon = false;
                 coger.hasWeapon = true;
+                coger.hasDamaged = false;
                 Destroy(this.gameObject);
 
             }

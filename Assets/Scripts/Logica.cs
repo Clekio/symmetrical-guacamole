@@ -21,8 +21,11 @@ public class Logica : MonoBehaviour
 
     public bool canAttack = true;
 
+    public bool hasDamaged = false;
 
     public GameObject weaponE;
+    public GameObject weaponE2;
+    public GameObject weaponE3;
 
     public Rigidbody throwable;
 
@@ -55,6 +58,7 @@ public class Logica : MonoBehaviour
 		float newPosZ = newPosition.z + (axisY * VelocidadMax * Time.deltaTime);
 		newPosition = new Vector3(newPosX, transform.position.y, newPosZ);
 		transform.position = newPosition;
+
 
 
 
@@ -113,7 +117,7 @@ public class Logica : MonoBehaviour
 
         lanzado.velocity = transform.forward * speed;
 
-        
+        Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
 
 
 
@@ -132,8 +136,12 @@ public class Logica : MonoBehaviour
     IEnumerator Count1()
     {
         weaponE.SetActive(true);
-        
+
+        //Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
+
         yield return new WaitForSeconds(0.2f);
+
+        
 
         yield return StartCoroutine(Count2());
 
@@ -141,11 +149,47 @@ public class Logica : MonoBehaviour
 
     IEnumerator Count2()
     {
+
+
+       // if (hasWeapon == true)
         
 
-        weaponE.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
+            weaponE.SetActive(false);
+            weaponE3.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            yield return StartCoroutine(Count4());
+        if (hasDamaged == true) hasWeapon = false;
+        //else
+        //{
+        //    weaponE.SetActive(false);
+        //    yield return new WaitForSeconds(0.1f);
+        //    canAttack = true;
+        //    yield return null;
+        //}
+
+    }
+
+    IEnumerator Count4()
+    {
+
+        weaponE2.SetActive(true);
+        weaponE3.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        //canAttack = true;
+        
+
+
+        yield return StartCoroutine(Count5());
+    }
+    IEnumerator Count5()
+    {
+
+
+        weaponE2.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
         canAttack = true;
+
+        
 
         yield return null;
     }
@@ -158,5 +202,11 @@ public class Logica : MonoBehaviour
 
         yield return null;
     }
+
+
+
+
+
+
 
 }
