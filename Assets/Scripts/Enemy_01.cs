@@ -26,7 +26,7 @@ public class Enemy_01 : MonoBehaviour {
 
         drop.SetActive(true);
 
-        romperArma.hasWeapon = false;
+        romperArma.hasDamaged = true;
 
         Destroy(this.gameObject);
 

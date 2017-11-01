@@ -2458,10 +2458,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VelocidadMax: 5
   controller: 0
-  hasWeapon: 0
+  hasWeapon: 1
   canWeapon: 0
   canAttack: 1
   weaponE: {fileID: 1864095053666832}
+  weaponE2: {fileID: 0}
   throwable: {fileID: 54190396437801510, guid: 064d602c7a6b6264d8a1b5da5ffdc9db, type: 2}
   player: {fileID: 1668216284135850}
   Axe: {fileID: 1946001134802598}

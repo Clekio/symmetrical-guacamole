@@ -38,11 +38,13 @@ public class Weapon : MonoBehaviour {
 
         }
 
-        if (Pickable == true)
+        if (Pickable == true && coger.hasWeapon == false)
         {
             if (XCI.GetButton(XboxButton.B, controller))
             {
-
+                coger.canWeapon = false;
+                coger.hasWeapon = true;
+                coger.hasDamaged = false;
                 Destroy(this.gameObject);
 
             }
@@ -53,14 +55,14 @@ public class Weapon : MonoBehaviour {
 
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider Player)
     {
 
         Pickable = true;
 
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider Player)
     {
 
         Pickable = false;
