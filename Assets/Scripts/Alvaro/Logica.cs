@@ -40,10 +40,18 @@ public class Logica : MonoBehaviour
 
     public float speed;
 
+    //para los sonidos
+    private AudioSource source;
+    private float volLowRange = .5f;
+    private float volHighRange = 1.0f;
+
+    public AudioClip AttackSound;
+
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
 
 
@@ -70,6 +78,8 @@ public class Logica : MonoBehaviour
                 if (canAttack == true)
                 {
                     anim.Play("AtaqueHorizontal", -1, 0f);
+                    float vol = Random.Range(volLowRange, volHighRange);
+                    source.PlayOneShot(AttackSound, vol);
                     canAttack = false;
                     StartCoroutine(Count0());
 

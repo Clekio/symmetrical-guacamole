@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Enemy_01 : MonoBehaviour {
 
+    Animator anim;
+
     public GameObject drop;
 
     public Logica romperArma;
+    public GameObject Enemigo;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start () {
+
+        anim = Enemigo.GetComponent<Animator>();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -28,7 +32,9 @@ public class Enemy_01 : MonoBehaviour {
 
         romperArma.hasDamaged = true;
 
-        Destroy(this.gameObject);
+        GetComponent<CapsuleCollider>().enabled = false;
+
+        anim.Play("Dying", -1, 0f);
 
     }
 }
