@@ -4,16 +4,17 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using XboxCtrlrInput;		// Para poder incluir en mando de Xbox
 
-public class Logica : MonoBehaviour 
+public class Logica : MonoBehaviour
 {
     Animator anim;
 
     public float VelocidadMax;
-	public XboxController controller;
+    public XboxController controller;
 
 
-	private Vector3 newPosition;
+    private Vector3 newPosition;
 
+    public Movimiento attacking;
 
     public bool hasWeapon = false;
 
@@ -39,6 +40,8 @@ public class Logica : MonoBehaviour
 
 
     public float speed;
+    //public float turnSpeed;
+
 
     //para los sonidos
     private AudioSource source;
@@ -46,7 +49,7 @@ public class Logica : MonoBehaviour
     private float volHighRange = 1.0f;
 
     public AudioClip AttackSound;
-
+    
 
     private void Start()
     {
@@ -56,30 +59,21 @@ public class Logica : MonoBehaviour
 
 
 
-    void Update () 
-	{
-        // Movimiento del stick izquierdo
-        newPosition = transform.position;
-		float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
-		float axisY = XCI.GetAxis(XboxAxis.LeftStickY, controller);
-		float newPosX = newPosition.x + (axisX * VelocidadMax * Time.deltaTime);
-		float newPosZ = newPosition.z + (axisY * VelocidadMax * Time.deltaTime);
-		newPosition = new Vector3(newPosX, transform.position.y, newPosZ);
-		transform.position = newPosition;
-
-
-
-
+    void Update()
+    {
         if (hasWeapon == true)
         {
+
             Axe.GetComponent<SkinnedMeshRenderer>().enabled = true;
+
             if (XCI.GetButtonDown(XboxButton.X, controller))
             {
                 if (canAttack == true)
                 {
+
+
                     anim.Play("AtaqueHorizontal", -1, 0f);
-                    float vol = Random.Range(volLowRange, volHighRange);
-                    source.PlayOneShot(AttackSound, vol);
+
                     canAttack = false;
                     StartCoroutine(Count0());
 
@@ -99,8 +93,8 @@ public class Logica : MonoBehaviour
 
                 }
             }
-            }
-        
+        }
+
         else
         {
             Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
@@ -108,14 +102,11 @@ public class Logica : MonoBehaviour
             {
                 if (XCI.GetButton(XboxButton.B, controller))
                 {
-                    //hasWeapon = true;
-
-
+                    hasWeapon = true;
 
                 }
             }
         }
-
 
     } //Cierra update
 
@@ -123,7 +114,7 @@ public class Logica : MonoBehaviour
     void ThrowIt()
     {
 
-        Rigidbody lanzado = Instantiate (throwable, spawn.position, spawn.rotation) as Rigidbody;
+        Rigidbody lanzado = Instantiate(throwable, spawn.position, spawn.rotation) as Rigidbody;
 
         lanzado.velocity = transform.forward * speed;
 
@@ -135,7 +126,12 @@ public class Logica : MonoBehaviour
 
     IEnumerator Count0()
     {
+        attacking.attacking = true;
 
+        yield return new WaitForSeconds(0.35f);
+
+        float vol = Random.Range(volLowRange, volHighRange);
+        source.PlayOneShot(AttackSound, vol);
 
         yield return new WaitForSeconds(0.8f);
 
@@ -151,7 +147,7 @@ public class Logica : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
 
-        
+
 
         yield return StartCoroutine(Count2());
 
@@ -161,13 +157,13 @@ public class Logica : MonoBehaviour
     {
 
 
-       // if (hasWeapon == true)
-        
+        // if (hasWeapon == true)
 
-            weaponE.SetActive(false);
-            weaponE3.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            yield return StartCoroutine(Count4());
+
+        weaponE.SetActive(false);
+        weaponE3.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        yield return StartCoroutine(Count4());
         if (hasDamaged == true) hasWeapon = false;
         //else
         //{
@@ -179,6 +175,14 @@ public class Logica : MonoBehaviour
 
     }
 
+    IEnumerator Count3()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        canAttack = true;
+
+        yield return null;
+    }
     IEnumerator Count4()
     {
 
@@ -186,7 +190,7 @@ public class Logica : MonoBehaviour
         weaponE3.SetActive(false);
         yield return new WaitForSeconds(0.1f);
         //canAttack = true;
-        
+
 
 
         yield return StartCoroutine(Count5());
@@ -199,24 +203,9 @@ public class Logica : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         canAttack = true;
 
-        
+        attacking.attacking = false;
 
         yield return null;
     }
-
-    IEnumerator Count3()
-    {
-
-        yield return new WaitForSeconds(0.2f);
-        canAttack = true;
-
-        yield return null;
-    }
-
-
-
-
-
-
 
 }
