@@ -18,7 +18,7 @@ public class TurnoOnPasillo : MonoBehaviour {
 		
         if (encender.hasWeapon == true) {
 
-            Debug.Log("pene");
+            
 
             StartCoroutine(Count0());
 
