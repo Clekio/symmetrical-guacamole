@@ -2612,6 +2612,7 @@ GameObject:
   - component: {fileID: 185051440}
   - component: {fileID: 185051439}
   - component: {fileID: 185051438}
+  - component: {fileID: 185051441}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -2648,7 +2649,7 @@ MonoBehaviour:
   drop: {fileID: 1566718600}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 159333260}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &185051439
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2746,6 +2747,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &185051441
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185051436}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &185411613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5916,6 +5997,7 @@ GameObject:
   - component: {fileID: 414850930}
   - component: {fileID: 414850929}
   - component: {fileID: 414850928}
+  - component: {fileID: 414850931}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -5952,7 +6034,7 @@ MonoBehaviour:
   drop: {fileID: 149100545}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 1391647615}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &414850929
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6050,6 +6132,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &414850931
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414850926}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &415755471
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,6 +7262,7 @@ GameObject:
   - component: {fileID: 475808197}
   - component: {fileID: 475808196}
   - component: {fileID: 475808195}
+  - component: {fileID: 475808198}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -7136,7 +7299,7 @@ MonoBehaviour:
   drop: {fileID: 1605089479}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 722608506}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &475808196
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7234,6 +7397,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &475808198
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475808193}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &477317336
 GameObject:
   m_ObjectHideFlags: 0
@@ -10301,6 +10544,7 @@ GameObject:
   - component: {fileID: 695468750}
   - component: {fileID: 695468749}
   - component: {fileID: 695468748}
+  - component: {fileID: 695468751}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -10337,7 +10581,7 @@ MonoBehaviour:
   drop: {fileID: 66406316}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 849906992}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &695468749
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10435,6 +10679,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &695468751
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695468746}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &697301230
 GameObject:
   m_ObjectHideFlags: 0
@@ -12527,6 +12851,7 @@ GameObject:
   - component: {fileID: 841550684}
   - component: {fileID: 841550683}
   - component: {fileID: 841550682}
+  - component: {fileID: 841550685}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -12563,7 +12888,7 @@ MonoBehaviour:
   drop: {fileID: 138945601}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 1763765835}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &841550683
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12661,6 +12986,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &841550685
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841550680}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &842152201
 GameObject:
   m_ObjectHideFlags: 0
@@ -13095,6 +13500,7 @@ GameObject:
   - component: {fileID: 890770421}
   - component: {fileID: 890770420}
   - component: {fileID: 890770419}
+  - component: {fileID: 890770422}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -13130,8 +13536,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drop: {fileID: 2085868816}
   romperArma: {fileID: 566848836}
-  Enemigo: {fileID: 849906992}
-  blood: {fileID: 0}
+  Enemigo: {fileID: 1518941822}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &890770420
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13229,6 +13635,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &890770422
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890770417}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &895620576
 GameObject:
   m_ObjectHideFlags: 0
@@ -16371,6 +16857,7 @@ GameObject:
   - component: {fileID: 1133144478}
   - component: {fileID: 1133144477}
   - component: {fileID: 1133144476}
+  - component: {fileID: 1133144479}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -16407,7 +16894,7 @@ MonoBehaviour:
   drop: {fileID: 965396372}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 2020114395}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &1133144477
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16505,6 +16992,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &1133144479
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1133144474}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1134213738
 GameObject:
   m_ObjectHideFlags: 0
@@ -17515,6 +18082,7 @@ GameObject:
   - component: {fileID: 1220371451}
   - component: {fileID: 1220371450}
   - component: {fileID: 1220371449}
+  - component: {fileID: 1220371452}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -17551,7 +18119,7 @@ MonoBehaviour:
   drop: {fileID: 1089835385}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 1736913978}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &1220371450
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17649,6 +18217,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &1220371452
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220371447}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1224255953
 GameObject:
   m_ObjectHideFlags: 0
@@ -21698,6 +22346,7 @@ GameObject:
   - component: {fileID: 1600203749}
   - component: {fileID: 1600203748}
   - component: {fileID: 1600203747}
+  - component: {fileID: 1600203750}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -21734,7 +22383,7 @@ MonoBehaviour:
   drop: {fileID: 1345227312}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 399940076}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &1600203748
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21832,6 +22481,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &1600203750
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1600203745}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1602044057
 GameObject:
   m_ObjectHideFlags: 0
@@ -22038,6 +22767,7 @@ GameObject:
   - component: {fileID: 1620159656}
   - component: {fileID: 1620159655}
   - component: {fileID: 1620159654}
+  - component: {fileID: 1620159657}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -22074,7 +22804,7 @@ MonoBehaviour:
   drop: {fileID: 67515160}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 1483265224}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &1620159655
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22172,6 +22902,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &1620159657
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620159652}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1620183622
 GameObject:
   m_ObjectHideFlags: 0
@@ -24801,6 +25611,7 @@ GameObject:
   - component: {fileID: 1837314134}
   - component: {fileID: 1837314133}
   - component: {fileID: 1837314132}
+  - component: {fileID: 1837314135}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -24837,7 +25648,7 @@ MonoBehaviour:
   drop: {fileID: 1708144848}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 1931648813}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &1837314133
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24935,6 +25746,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &1837314135
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1837314130}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1837340394
 GameObject:
   m_ObjectHideFlags: 0
@@ -26296,6 +27187,7 @@ GameObject:
   - component: {fileID: 1936754123}
   - component: {fileID: 1936754122}
   - component: {fileID: 1936754121}
+  - component: {fileID: 1936754124}
   m_Layer: 0
   m_Name: MutantMesh
   m_TagString: Untagged
@@ -26332,7 +27224,7 @@ MonoBehaviour:
   drop: {fileID: 108245246}
   romperArma: {fileID: 566848836}
   Enemigo: {fileID: 9597072}
-  blood: {fileID: 0}
+  blood: {fileID: 8300000, guid: 2118b2b55d6cefa428b063401f181a84, type: 3}
 --- !u!136 &1936754122
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26430,6 +27322,86 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.116016924, y: -0.0034389496, z: -0.033612013}
     m_Extent: {x: 1.3754027, y: 0.9332926, z: 0.3393561}
   m_DirtyAABB: 0
+--- !u!82 &1936754124
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936754119}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1937602623
 GameObject:
   m_ObjectHideFlags: 0
