@@ -8,6 +8,8 @@ public class Enemy_01 : MonoBehaviour {
 
     public GameObject drop;
 
+	public GameObject sangre;
+
     public Logica romperArma;
     public GameObject Enemigo;
 
@@ -33,6 +35,8 @@ public class Enemy_01 : MonoBehaviour {
     private void OnTriggerEnter(Collider Weapon)
     {
         source.PlayOneShot(blood, 0.3f);
+
+		sangre.SetActive (true);
 
         drop.SetActive(true);
 
