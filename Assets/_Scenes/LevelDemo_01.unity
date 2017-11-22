@@ -8747,10 +8747,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  Vgiro: 20
+  Vgiro: 50
   obj: {fileID: 0}
   attacking: 0
   stepSound: {fileID: 8300000, guid: c7ac5b9b5d7554e4a9dd90f0607bed2a, type: 3}
+  doAttack: 0
 --- !u!1 &567120666
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class Movimiento : MonoBehaviour {
     public AudioClip stepSound;
 
     bool paso = true;
+    public bool doAttack = false;
+    bool doAttackMove = false;
 
     // Use this for initialization
     void Start () {
@@ -46,6 +48,17 @@ public class Movimiento : MonoBehaviour {
             Move();
 
         }
+
+        if (doAttack == true)
+        {
+            StartCoroutine(Count1());
+
+            if (doAttackMove == true)
+            {
+                Attack();
+            }
+        }
+
     }
 
     void GetInput()
@@ -83,6 +96,12 @@ public class Movimiento : MonoBehaviour {
             StartCoroutine(Count0());
         }
 
+
+    }
+
+    public void Attack()
+    {
+        transform.position += transform.forward * 8 * Time.deltaTime;
     }
 
 
@@ -92,8 +111,29 @@ public class Movimiento : MonoBehaviour {
         yield return new WaitForSeconds(0.38f);
 
         paso = true;
+
         yield return null;
 
     }
 
+    IEnumerator Count1()
+    {
+
+        yield return new WaitForSeconds(0.7f);
+
+        doAttackMove = true;
+
+        yield return StartCoroutine(Count2());
+
+    }
+    IEnumerator Count2()
+    {
+
+        yield return new WaitForSeconds(0.15f);
+
+        doAttack = false;
+        doAttackMove = false;
+        yield return null;
+
+    }
 }

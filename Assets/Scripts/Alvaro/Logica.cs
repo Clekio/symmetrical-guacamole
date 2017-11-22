@@ -74,8 +74,11 @@ public class Logica : MonoBehaviour
 
                     anim.Play("AtaqueHorizontal", -1, 0f);
 
+                    attacking.doAttack = true;
+
                     canAttack = false;
                     StartCoroutine(Count0());
+                    StartCoroutine(Count6());
 
                 }
             }
@@ -126,12 +129,7 @@ public class Logica : MonoBehaviour
 
     IEnumerator Count0()
     {
-        attacking.attacking = true;
 
-        yield return new WaitForSeconds(0.35f);
-
-        float vol = Random.Range(volLowRange, volHighRange);
-        source.PlayOneShot(AttackSound, vol);
 
         yield return new WaitForSeconds(0.8f);
 
@@ -207,5 +205,15 @@ public class Logica : MonoBehaviour
 
         yield return null;
     }
+    IEnumerator Count6()
+    {
+        attacking.attacking = true;
 
+        yield return new WaitForSeconds(0.35f);
+
+        float vol = Random.Range(volLowRange, volHighRange);
+        source.PlayOneShot(AttackSound, vol);
+
+        yield return null;
+    }
 }
