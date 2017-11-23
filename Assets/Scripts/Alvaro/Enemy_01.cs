@@ -10,7 +10,7 @@ public class Enemy_01 : MonoBehaviour {
 
 	public GameObject sangre;
 
-    public Logica romperArma;
+    Movimiento romperArma;
     public GameObject Enemigo;
 
     private AudioSource source;
@@ -34,13 +34,15 @@ public class Enemy_01 : MonoBehaviour {
     
     private void OnTriggerEnter(Collider Weapon)
     {
+        romperArma = Weapon.GetComponentInParent<Movimiento>();
+        if (romperArma != null)
+            romperArma.hasDamaged = true;
+
         source.PlayOneShot(blood, 0.3f);
 
 		sangre.SetActive (true);
 
         drop.SetActive(true);
-
-        romperArma.hasDamaged = true;
 
         GetComponent<CapsuleCollider>().enabled = false;
 
