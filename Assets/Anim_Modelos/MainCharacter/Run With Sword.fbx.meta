@@ -3,7 +3,7 @@ guid: 6555925868990514c89117bdb5a56053
 timeCreated: 1507982564
 licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: BattleAxe_GEO
     100002: Head
@@ -181,57 +181,10 @@ ModelImporter:
     13700012: MaleBruteA_Hair
     13700014: MaleBruteA_Moustaches
     13700016: MaleBruteA_Shoes
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Body_MAT2
-    second: {fileID: 2100000, guid: 959aac1f114252147af48faaa627df87, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: EyeSpec_MAT2
-    second: {fileID: 2100000, guid: 959aac1f114252147af48faaa627df87, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lashes_MAT2
-    second: {fileID: 2100000, guid: 959aac1f114252147af48faaa627df87, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MaleBruteA_Bottom3
-    second: {fileID: 2100000, guid: a914624ee9c64d546b45af7b96be436a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MaleBruteA_Hair4
-    second: {fileID: 2100000, guid: 75953d25e7d008c4dbb9f41d518df58f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MaleBruteA_Moustache3
-    second: {fileID: 2100000, guid: 2d1a818304abfbd41b74a8e9127ad98b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MaleBruteA_Shoes4
-    second: {fileID: 2100000, guid: 483c98cd497f3714dba96ebc29645002, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blinn5
-    second: {fileID: 2100000, guid: 82914dcf35713f945b8b68cbe5e7618c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong2
-    second: {fileID: 2100000, guid: 4e3b2bbc40b30e14ea9e570eda734039, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -244,7 +197,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -276,7 +228,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.33161953
+        functionName: Paso
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8380463
+        functionName: Paso
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

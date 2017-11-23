@@ -21,8 +21,7 @@ public class Transicion : MonoBehaviour
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
 
-        anim.SetFloat("inputH", inputH);
-        anim.SetFloat("inputV", inputV);
+        anim.SetFloat("input", (inputH * Vector3.right + inputV * Vector3.forward).magnitude);
 
     if (XCI.GetButtonDown(XboxButton.X, controller))
         {

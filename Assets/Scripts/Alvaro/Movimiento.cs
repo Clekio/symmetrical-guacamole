@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;		// Para poder incluir en mando de Xbox
 
 public class Movimiento : MonoBehaviour {
 
+    Animator anim;
     public float speed;
     public float Vgiro;
 
@@ -12,8 +14,6 @@ public class Movimiento : MonoBehaviour {
 
     Quaternion pRotation;
     public Transform obj;
-
-    Animator anim;
 
     public bool attacking = false;
 
@@ -25,37 +25,88 @@ public class Movimiento : MonoBehaviour {
     public bool doAttack = false;
     bool doAttackMove = false;
 
+
+    public float VelocidadMax;
+    public XboxController controller;
+
+
+    private Vector3 newPosition;
+
+    public bool hasWeapon = false;
+    public bool canWeapon = false;
+    public bool canAttack = true;
+    public bool hasDamaged = false;
+
+    public List<GameObject> weaponTriggers;
+
+    public Rigidbody throwable;
+
+    public GameObject player;
+
+    public GameObject Axe;
+    
+    private float volLowRange = .5f;
+    private float volHighRange = 1.0f;
+    public AudioClip AttackSound;
+
+
     // Use this for initialization
     void Start () {
 
         obj = Camera.main.transform;
         source = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
 
 	
 	// Update is called once per frame
 	void Update () {
-
+        CheckAttack();
         if (attacking == false)
         {
             
             GetInput();
-
-            if (Mathf.Abs(input.x) < 0.2 && Mathf.Abs(input.y) < 0.2) return;
-
             CalculateDirection();
             Rotate();
             Move();
+            anim.SetFloat("input", (input.x * Vector3.right + input.y * Vector3.forward).magnitude);
 
         }
-
-        if (doAttack == true)
+        else if (doAttackMove == true)
         {
-            StartCoroutine(Count1());
+            AttackMove();
+            anim.SetFloat("input", 0);
+        }
 
-            if (doAttackMove == true)
+
+    }
+
+    void CheckAttack() {
+        if (hasWeapon == true)
+        {
+            Axe.GetComponent<SkinnedMeshRenderer>().enabled = true;
+
+            if (canAttack == true && XCI.GetButtonDown(XboxButton.X, controller))
             {
-                Attack();
+                anim.SetTrigger("Attack");
+                canAttack = false;
+                attacking = true;
+            }
+            if (canAttack == true && XCI.GetButton(XboxButton.Y, controller))
+            {
+                anim.SetTrigger("Attack");
+                canAttack = false;
+                hasWeapon = false;
+            }
+        }else
+        {
+            Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
+            if (canWeapon == true)
+            {
+                if (XCI.GetButton(XboxButton.B, controller))
+                {
+                    hasWeapon = true;
+                }
             }
         }
 
@@ -81,59 +132,62 @@ public class Movimiento : MonoBehaviour {
     void Rotate()
     {
         pRotation = Quaternion.Euler(0, angle, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, pRotation, Vgiro * Time.deltaTime);
+        if((input.x * Vector3.right + input.y * Vector3.forward).magnitude > 0.2f && !attacking)
+            transform.rotation = Quaternion.Slerp(transform.rotation, pRotation, Vgiro * Time.deltaTime);
 
     }
 
     private void Move()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.position += (input.x * Vector3.right + input.y*Vector3.forward) * speed * Time.deltaTime;
 
-        if (paso == true) {
-            source.PlayOneShot(stepSound, 0.03f);
-            paso = false;
-
-            StartCoroutine(Count0());
-        }
-
-
+    
     }
 
-    public void Attack()
+    public void Paso()
     {
-        transform.position += transform.forward * 8 * Time.deltaTime;
+        source.PlayOneShot(stepSound, 0.03f);
+    }
+    public float speedAttackMove = 8;
+    public void AttackMove()
+    {
+        transform.position += transform.forward * speedAttackMove * Time.deltaTime;
     }
 
 
-    IEnumerator Count0()
+    /*
+    *
+    *Funciones para eventos animacion
+    *
+    */
+    public void ActivateAttackMove()
     {
-        
-        yield return new WaitForSeconds(0.38f);
-
-        paso = true;
-
-        yield return null;
-
-    }
-
-    IEnumerator Count1()
-    {
-
-        yield return new WaitForSeconds(0.7f);
-
+        float vol = Random.Range(volLowRange, volHighRange);
+        source.PlayOneShot(AttackSound, vol);
         doAttackMove = true;
-
-        yield return StartCoroutine(Count2());
-
     }
-    IEnumerator Count2()
+    public void EndAttackMove()
     {
-
-        yield return new WaitForSeconds(0.15f);
-
-        doAttack = false;
         doAttackMove = false;
-        yield return null;
+    }
+
+    public void EndAttack() {
+        attacking = false;
+        doAttackMove = false;
+        canAttack = true;
+        if (hasDamaged == true) hasWeapon = false;
+    }
+    
+    void ActivateAttackTrigger(int triggerNumber)
+    {
+        if (triggerNumber < weaponTriggers.Count)
+        {
+            weaponTriggers[triggerNumber].SetActive(true);
+        }
+        if(triggerNumber > 0 && triggerNumber <= weaponTriggers.Count)
+        {
+            weaponTriggers[triggerNumber-1].SetActive(false);
+        }
 
     }
 }

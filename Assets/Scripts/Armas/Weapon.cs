@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour {
 
     public GameObject mainchar;
 
-    public Logica coger;
+    public Movimiento coger;
 
     public bool Pickable = false;
 
@@ -17,8 +17,8 @@ public class Weapon : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        coger = FindObjectOfType<Movimiento>();
+    }
 	
 
 

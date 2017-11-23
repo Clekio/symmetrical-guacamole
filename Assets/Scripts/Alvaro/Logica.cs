@@ -72,7 +72,7 @@ public class Logica : MonoBehaviour
                 {
 
 
-                    anim.Play("AtaqueHorizontal", -1, 0f);
+                    anim.SetTrigger("Attack");
 
                     attacking.doAttack = true;
 
