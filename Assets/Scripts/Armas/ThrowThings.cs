@@ -6,7 +6,7 @@ public class ThrowThings : MonoBehaviour {
 
     public Rigidbody rb;
 
-    public Logica direction;
+    public Movimiento direction;
 
 	// Use this for initialization
 	void Start () {

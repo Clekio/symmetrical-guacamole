@@ -6,7 +6,9 @@ using XboxCtrlrInput;		// Para poder incluir en mando de Xbox
 public class Movimiento : MonoBehaviour {
 
     Animator anim;
+
     public float speed;
+    public float speed2;
     public float Vgiro;
 
     private Vector2 input;
@@ -40,6 +42,8 @@ public class Movimiento : MonoBehaviour {
     public List<GameObject> weaponTriggers;
 
     public Rigidbody throwable;
+
+    public Transform spawn;
 
     public GameObject player;
 
@@ -94,9 +98,11 @@ public class Movimiento : MonoBehaviour {
             }
             if (canAttack == true && XCI.GetButton(XboxButton.Y, controller))
             {
-                anim.SetTrigger("Attack");
+                
+                anim.SetTrigger("Lanzar");
                 canAttack = false;
-                hasWeapon = false;
+                attacking = true;
+                //hasWeapon = false;
             }
         }else
         {
@@ -155,6 +161,7 @@ public class Movimiento : MonoBehaviour {
     }
 
 
+
     /*
     *
     *Funciones para eventos animacion
@@ -171,11 +178,24 @@ public class Movimiento : MonoBehaviour {
         doAttackMove = false;
     }
 
+    public void ThrowIt()
+    {
+        Rigidbody lanzado = Instantiate(throwable, spawn.position, spawn.rotation) as Rigidbody;
+
+        lanzado.velocity = transform.forward * speed2;
+    }
+
     public void EndAttack() {
         attacking = false;
         doAttackMove = false;
         canAttack = true;
         if (hasDamaged == true) hasWeapon = false;
+    }
+
+    public void CleanWeapon()
+    {
+        //Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
+        hasWeapon = false;
     }
     
     void ActivateAttackTrigger(int triggerNumber)
