@@ -28,7 +28,8 @@ public class Enemy_02 : MonoBehaviour {
 	public Transform iaTarget;
 
 	//Cosas VIDA
-	public float health = 100;
+	public float Starthealth = 100;
+	public float Health;
 
 	public Image HealthBar;
 
@@ -37,11 +38,12 @@ public class Enemy_02 : MonoBehaviour {
 
 		anim = Enemigo.GetComponent<Animator>();
 		source = GetComponent<AudioSource>();
+		Health = Starthealth;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		HealthBar.fillAmount = health / 100f;
+		HealthBar.fillAmount = Health / Starthealth;
 		iaTargetDistance = Vector3.Distance (iaTarget.position, transform.position);
 		if(iaTargetDistance<iaLookDistance){
 			//myRender.material.color = Color.yellow;
@@ -70,20 +72,19 @@ public class Enemy_02 : MonoBehaviour {
 			romperArma.hasDamaged = true;
 
 		source.PlayOneShot(blood, 0.3f);
-
+		anim.Play("HitReact", -1, 0f);
 		sangre.SetActive (true);
 
-		drop.SetActive(true);
+		Health = Health - 20;
 
-		anim.Play("HitReact", -1, 0f);
-		health = health - 20;
-
-		if (health <= 0){
+		if (Health <= 0){
 			GetComponent<CapsuleCollider>().enabled = false;
 
 			anim.Play("Dying", -1, 0f);
 
 			GetComponent<Enemy_02> ().enabled = false;
+
+			drop.SetActive(true);
 		}
 
 	}
