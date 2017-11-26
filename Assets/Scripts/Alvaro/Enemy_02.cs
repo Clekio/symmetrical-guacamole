@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_02 : MonoBehaviour {
 
@@ -26,6 +27,11 @@ public class Enemy_02 : MonoBehaviour {
 
 	public Transform iaTarget;
 
+	//Cosas VIDA
+	public float health = 100;
+
+	public Image HealthBar;
+
 	// Use this for initialization
 	void Start () {
 
@@ -35,26 +41,26 @@ public class Enemy_02 : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		HealthBar.fillAmount = health / 100f;
 		iaTargetDistance = Vector3.Distance (iaTarget.position, transform.position);
 		if(iaTargetDistance<iaLookDistance){
 			//myRender.material.color = Color.yellow;
 			lookAtPlayer();
 			print ("Looking Player");
-
 		}
-		if(iaTargetDistance<iaAttackDistance){
+		if(iaTargetDistance<iaAttackDistance && iaTargetDistance > 2){
 			//myRender.material.color = Color.red;
 			attackReady();
 			print ("Attack");
 
 		}
-		else{
-			//myRender.material.color = Color.blue;
-
+		if(iaTargetDistance <= 2){
+			transform.position  += ((transform.forward * 0) * Time.deltaTime);
+			anim.Play("Stab", -1, 0f);
 		}
 
-
 	}
+
 
 
 	private void OnTriggerEnter(Collider Weapon)
@@ -69,22 +75,26 @@ public class Enemy_02 : MonoBehaviour {
 
 		drop.SetActive(true);
 
-		GetComponent<CapsuleCollider>().enabled = false;
+		anim.Play("HitReact", -1, 0f);
+		health = health - 20;
 
+		if (health <= 0){
+			GetComponent<CapsuleCollider>().enabled = false;
 
+			anim.Play("Dying", -1, 0f);
 
-		anim.Play("Dying", -1, 0f);
+			GetComponent<Enemy_02> ().enabled = false;
+		}
 
 	}
 
 	void lookAtPlayer(){
 		Quaternion rotation = Quaternion.LookRotation (iaTarget.position - transform.position);
 		transform.rotation = Quaternion.Slerp(transform.rotation,rotation, Time.deltaTime*damping);
-		//theRigidbody.velocity = transform.forward * Time.deltaTime * 0;
+		anim.Play("Walking", -1, 0f);
 	}
 
 	void attackReady(){
-		//theRigidbody.velocity = transform.forward * Time.deltaTime * iaMovSpeed;
 		transform.position += ((transform.forward * movimiento) * Time.deltaTime);
 	}
 }
