@@ -48,7 +48,11 @@ public class Movimiento : MonoBehaviour {
     public GameObject player;
 
     public GameObject Axe;
-    
+
+    public GameObject Area1;
+    public GameObject Area2;
+    public GameObject Area3;
+
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
     public AudioClip AttackSound;
@@ -210,17 +214,37 @@ public class Movimiento : MonoBehaviour {
         //Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
         hasWeapon = false;
     }
-    
-    void ActivateAttackTrigger(int triggerNumber)
-    {
-        if (triggerNumber < weaponTriggers.Count)
-        {
-            weaponTriggers[triggerNumber].SetActive(true);
-        }
-        if(triggerNumber > 0 && triggerNumber <= weaponTriggers.Count)
-        {
-            weaponTriggers[triggerNumber-1].SetActive(false);
-        }
 
+    public void Trigger1()
+    {
+        Area1.SetActive(true);
     }
+    public void Trigger2()
+    {
+        Area1.SetActive(false);
+        Area2.SetActive(true);
+    }
+    public void Trigger3()
+    {
+        Area2.SetActive(false);
+        Area3.SetActive(true);
+    }
+    public void Trigger4()
+    {
+        Area3.SetActive(false);
+    }
+
+
+//    void ActivateAttackTrigger(int triggerNumber)
+//    {
+//        if (triggerNumber < weaponTriggers.Count)
+//        {
+//            weaponTriggers[triggerNumber].SetActive(true);
+//        }
+//        if(triggerNumber > 0 && triggerNumber <= weaponTriggers.Count)
+//        {
+//            weaponTriggers[triggerNumber-1].SetActive(false);
+//        }
+
+//    }
 }
