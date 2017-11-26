@@ -26,7 +26,7 @@ public class Movimiento : MonoBehaviour {
     bool paso = true;
     public bool doAttack = false;
     bool doAttackMove = false;
-
+    
 
     public float VelocidadMax;
     public XboxController controller;
@@ -48,7 +48,11 @@ public class Movimiento : MonoBehaviour {
     public GameObject player;
 
     public GameObject Axe;
-    
+
+    public GameObject Area1;
+    public GameObject Area2;
+    public GameObject Area3;
+
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
     public AudioClip AttackSound;
@@ -57,14 +61,14 @@ public class Movimiento : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        obj = Camera.main.transform;
+        //obj = Camera.main.transform;
         source = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
 
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         CheckAttack();
         if (attacking == false)
         {
@@ -84,6 +88,9 @@ public class Movimiento : MonoBehaviour {
 
 
     }
+
+
+
 
     void CheckAttack() {
         if (hasWeapon == true)
@@ -152,7 +159,7 @@ public class Movimiento : MonoBehaviour {
 
     public void Paso()
     {
-        source.PlayOneShot(stepSound, 0.03f);
+        source.PlayOneShot(stepSound, 0.01f);
     }
     public float speedAttackMove = 8;
     public void AttackMove()
@@ -167,10 +174,17 @@ public class Movimiento : MonoBehaviour {
     *Funciones para eventos animacion
     *
     */
-    public void ActivateAttackMove()
+    
+    public void ActivateSound()
     {
+        
         float vol = Random.Range(volLowRange, volHighRange);
         source.PlayOneShot(AttackSound, vol);
+    }
+
+    public void ActivateAttackMove()
+    {
+
         doAttackMove = true;
     }
     public void EndAttackMove()
@@ -186,6 +200,9 @@ public class Movimiento : MonoBehaviour {
     }
 
     public void EndAttack() {
+
+        weaponTriggers[2].SetActive(false);
+        
         attacking = false;
         doAttackMove = false;
         canAttack = true;
@@ -197,17 +214,37 @@ public class Movimiento : MonoBehaviour {
         //Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
         hasWeapon = false;
     }
-    
-    void ActivateAttackTrigger(int triggerNumber)
-    {
-        if (triggerNumber < weaponTriggers.Count)
-        {
-            weaponTriggers[triggerNumber].SetActive(true);
-        }
-        if(triggerNumber > 0 && triggerNumber <= weaponTriggers.Count)
-        {
-            weaponTriggers[triggerNumber-1].SetActive(false);
-        }
 
+    public void Trigger1()
+    {
+        Area1.SetActive(true);
     }
+    public void Trigger2()
+    {
+        Area1.SetActive(false);
+        Area2.SetActive(true);
+    }
+    public void Trigger3()
+    {
+        Area2.SetActive(false);
+        Area3.SetActive(true);
+    }
+    public void Trigger4()
+    {
+        Area3.SetActive(false);
+    }
+
+
+//    void ActivateAttackTrigger(int triggerNumber)
+//    {
+//        if (triggerNumber < weaponTriggers.Count)
+//        {
+//            weaponTriggers[triggerNumber].SetActive(true);
+//        }
+//        if(triggerNumber > 0 && triggerNumber <= weaponTriggers.Count)
+//        {
+//            weaponTriggers[triggerNumber-1].SetActive(false);
+//        }
+
+//    }
 }
