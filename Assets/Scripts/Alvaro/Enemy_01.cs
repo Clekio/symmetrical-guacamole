@@ -7,7 +7,6 @@ public class Enemy_01 : MonoBehaviour {
     Animator anim;
 
     public GameObject drop;
-
 	public GameObject sangre;
 
     Movimiento romperArma;
@@ -16,7 +15,6 @@ public class Enemy_01 : MonoBehaviour {
     private AudioSource source;
 
     public AudioClip blood;
-
     // Use this for initialization
     void Start () {
 
@@ -26,8 +24,6 @@ public class Enemy_01 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
-
 
 	}
 
@@ -51,4 +47,5 @@ public class Enemy_01 : MonoBehaviour {
         anim.Play("Dying", -1, 0f);
 
     }
+
 }
