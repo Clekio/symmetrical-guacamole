@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d733a8c3166f5cd478d23816d67d8d74
-timeCreated: 1508094756
+guid: 01329872c738c9d4eaddb7b14285a0a6
+timeCreated: 1511731097
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -81,7 +81,7 @@ ModelImporter:
     400070: Mutant:Spine
     400072: Mutant:Spine1
     400074: Mutant:Spine2
-    7400000: IddleEnemy
+    7400000: Enemy_Walking
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -102,7 +102,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -111,10 +111,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: IddleEnemy
+      name: Enemy_Walking
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 120
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -165,7 +165,7 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 2
     human: []
@@ -182,8 +182,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d5d8a395c08ba074d9f4ce63d50ba659,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
