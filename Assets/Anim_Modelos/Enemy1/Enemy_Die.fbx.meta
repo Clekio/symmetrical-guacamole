@@ -81,7 +81,7 @@ ModelImporter:
     400070: Mutant:Spine
     400072: Mutant:Spine1
     400074: Mutant:Spine2
-    7400000: Dying
+    7400000: Enemy_Die
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -111,7 +111,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Dying
+      name: Enemy_Die
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 173

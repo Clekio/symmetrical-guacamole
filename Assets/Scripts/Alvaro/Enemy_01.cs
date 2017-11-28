@@ -15,10 +15,12 @@ public class Enemy_01 : MonoBehaviour {
     private AudioSource source;
 
     public AudioClip blood;
+	//Cosas guille
+
     // Use this for initialization
     void Start () {
 
-        anim = Enemigo.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
     }
 	
@@ -40,12 +42,11 @@ public class Enemy_01 : MonoBehaviour {
 
         drop.SetActive(true);
 
-        GetComponent<CapsuleCollider>().enabled = false;
+       // GetComponent<CapsuleCollider>().enabled = false;
+		// GetComponent<SphereCollider> ().enabled = true;
 
-        
-
-        anim.Play("Dying", -1, 0f);
-
+		anim.SetBool("isDead", true);
+		GetComponent<Chasing>().enabled = false;
     }
 
 }
