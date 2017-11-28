@@ -26,7 +26,7 @@ public class LifeBar : MonoBehaviour {
         ratioText.text = (ratio * 100).ToString("0") + '%';
     }
 
-    private void TakeDamage (float damage)
+	public void TakeDamage (float damage)
     {
         hitpoint -= damage;
         if (hitpoint < 0)
@@ -39,7 +39,7 @@ public class LifeBar : MonoBehaviour {
 
     }
 
-    private void HealDamage (float heal)
+    public void HealDamage (float heal)
     {
         hitpoint += heal;
         if (hitpoint > maxHitpoint)

@@ -23,8 +23,7 @@ public class Movimiento : MonoBehaviour {
 
     public AudioClip stepSound;
 
-    bool paso = true;
-    public bool doAttack = false;
+	public bool doAttack = false;
     bool doAttackMove = false;
     
 

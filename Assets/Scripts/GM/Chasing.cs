@@ -10,6 +10,11 @@ public class Chasing : MonoBehaviour {
 	public float EnemySpeed;
 	public float EnemyVision;
 	public float EnemyAttackRange;
+
+
+	//Para hacer daño
+	public bool damaging;
+	public float damage;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -43,5 +48,25 @@ public class Chasing : MonoBehaviour {
 			anim.SetBool("isAttacking", false);
 
 		}
+	}
+	//cosas de alvaro
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Player")
+		{
+			other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
+
+		}
+
+	}
+	public void Hit()
+	{ 
+		GetComponent<BoxCollider>().enabled = true;
+
+	}
+	public void EndHit()
+	{ 
+		GetComponent<BoxCollider>().enabled = false;
+
 	}
 }

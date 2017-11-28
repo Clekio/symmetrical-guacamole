@@ -27,23 +27,15 @@ public class Enemy_02 : MonoBehaviour {
 
 	public Transform iaTarget;
 
-	//Cosas VIDA
-	public float Starthealth = 100;
-	public float Health;
-
-	public Image HealthBar;
-
 	// Use this for initialization
 	void Start () {
 
 		anim = Enemigo.GetComponent<Animator>();
 		source = GetComponent<AudioSource>();
-		Health = Starthealth;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		HealthBar.fillAmount = Health / Starthealth;
 		iaTargetDistance = Vector3.Distance (iaTarget.position, transform.position);
 		if(iaTargetDistance<iaLookDistance){
 			//myRender.material.color = Color.yellow;
@@ -75,19 +67,8 @@ public class Enemy_02 : MonoBehaviour {
 		anim.Play("HitReact", -1, 0f);
 		sangre.SetActive (true);
 
-		Health = Health - 20;
-
-		if (Health <= 0){
-			GetComponent<CapsuleCollider>().enabled = false;
-
-			anim.Play("Dying", -1, 0f);
-
-			GetComponent<Enemy_02> ().enabled = false;
-
-			drop.SetActive(true);
 		}
-
-	}
+		
 
 	void lookAtPlayer(){
 		Quaternion rotation = Quaternion.LookRotation (iaTarget.position - transform.position);
