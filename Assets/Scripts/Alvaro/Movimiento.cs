@@ -52,8 +52,8 @@ public class Movimiento : MonoBehaviour {
     public GameObject Area2;
     public GameObject Area3;
 
-    private float volLowRange = .5f;
-    private float volHighRange = 1.0f;
+    private float volLowRange = 0.3f;
+    private float volHighRange = 0.5f;
 
     public AudioClip AttackSound;
     public AudioClip ArmaRota;
@@ -161,7 +161,7 @@ public class Movimiento : MonoBehaviour {
 
     public void Paso()
     {
-        source.PlayOneShot(stepSound, 0.01f);
+        source.PlayOneShot(stepSound, 0.009f);
     }
     public float speedAttackMove = 8;
     public void AttackMove()
@@ -172,7 +172,7 @@ public class Movimiento : MonoBehaviour {
     public void SonidoCogerArma()
     {
 
-        source.PlayOneShot(CogerArma, 1f);
+        source.PlayOneShot(CogerArma, 0.3f);
     }
 
     /*

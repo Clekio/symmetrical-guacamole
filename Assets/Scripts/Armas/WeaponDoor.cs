@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
 
-public class Weapon : MonoBehaviour {
+public class WeaponDoor : MonoBehaviour {
 
     public XboxController controller;
 
@@ -49,7 +49,9 @@ public class Weapon : MonoBehaviour {
             if (XCI.GetButton(XboxButton.B, controller))
             {
                 coger.SonidoCogerArma();
+                door.SonidoPuertaAbierta();
 
+                primeraPuerta = true;
                 coger.canWeapon = false;
                 coger.hasWeapon = true;
                 coger.hasDamaged = false;
