@@ -8,10 +8,16 @@ public class DoorsEvent : MonoBehaviour
 
     public OpenDoors inside;
 
+    private AudioSource source;
+
+    public AudioClip OpenDoor;
+
+
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +32,13 @@ public class DoorsEvent : MonoBehaviour
 
         }
 
+
+    }
+
+    public void SonidoPuertaAbierta()
+    {
+
+        source.PlayOneShot(OpenDoor, 0.3f);
 
     }
 

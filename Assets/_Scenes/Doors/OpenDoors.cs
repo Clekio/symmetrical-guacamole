@@ -6,6 +6,7 @@ public class OpenDoors : MonoBehaviour {
 
     public bool inside = false;
 
+    public DoorsEvent door;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,8 @@ public class OpenDoors : MonoBehaviour {
         if (other.tag == "Player")
         {
             inside = true;
+
+            door.SonidoPuertaAbierta();
 
         }
 
