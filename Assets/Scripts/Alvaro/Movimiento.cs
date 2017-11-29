@@ -25,7 +25,8 @@ public class Movimiento : MonoBehaviour {
 
 	public bool doAttack = false;
     bool doAttackMove = false;
-    
+
+
 
     public float VelocidadMax;
     public XboxController controller;
@@ -88,7 +89,6 @@ public class Movimiento : MonoBehaviour {
             anim.SetFloat("input", 0);
         }
 
-
     }
 
 
@@ -124,6 +124,8 @@ public class Movimiento : MonoBehaviour {
                 }
             }
         }
+
+        
 
     }
 
@@ -167,6 +169,11 @@ public class Movimiento : MonoBehaviour {
     public void AttackMove()
     {
         transform.position += transform.forward * speedAttackMove * Time.deltaTime;
+    }
+
+    public void DamagedMove()
+    {
+        transform.position -= transform.forward * speedAttackMove * Time.deltaTime;
     }
 
     public void SonidoCogerArma()
