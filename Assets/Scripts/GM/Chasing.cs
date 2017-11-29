@@ -5,16 +5,22 @@ using UnityEngine;
 public class Chasing : MonoBehaviour {
 
 //	{} Para copiar
-	static Animator anim;
+	private Animator anim;
 	public Transform player;
 	public float EnemySpeed;
 	public float EnemyVision;
 	public float EnemyAttackRange;
 
+    public Enemy_01 dep;
 
-	//Para hacer daño
-	public bool damaging;
+    public bool death;
+    public bool Attacking;
+
+
+    //Para hacer daño
+    public bool damaging;
 	public float damage;
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -22,7 +28,10 @@ public class Chasing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Vector3.Distance(player.position, this.transform.position) < EnemyVision) {
+
+  
+
+		if(Vector3.Distance(player.position, this.transform.position) < EnemyVision && (Attacking == false) && (death == false)) {
 			
 			Vector3 direction = player.position - this.transform.position;
 			direction.y = 0;
@@ -48,25 +57,48 @@ public class Chasing : MonoBehaviour {
 			anim.SetBool("isAttacking", false);
 
 		}
-	}
+
+        death = dep.dep;
+
+        if (death == true)
+        {
+            //Stop();
+            EndHit();
+        }
+
+    }
 	//cosas de alvaro
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+        if (other.tag == "Player")
 		{
-			other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
-
+            if (death == false)
+            {
+                other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
+            }
 		}
 
 	}
-	public void Hit()
+
+    public void Stop()
+    {
+        Attacking = true;
+    }
+    public void NonStop()
+    {
+        Attacking = false;
+    }
+
+    public void Hit()
 	{ 
 		GetComponent<BoxCollider>().enabled = true;
+        
 
 	}
 	public void EndHit()
 	{ 
 		GetComponent<BoxCollider>().enabled = false;
+        //Attacking = false;
 
 	}
 }

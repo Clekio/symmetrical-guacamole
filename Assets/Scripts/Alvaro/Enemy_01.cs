@@ -14,6 +14,8 @@ public class Enemy_01 : MonoBehaviour {
 
     private AudioSource source;
 
+    public bool dep = false;
+
     public AudioClip blood;
 	//Cosas guille
 
@@ -32,21 +34,26 @@ public class Enemy_01 : MonoBehaviour {
     
     private void OnTriggerEnter(Collider Weapon)
     {
-        romperArma = Weapon.GetComponentInParent<Movimiento>();
-        if (romperArma != null)
-            romperArma.hasDamaged = true;
+        if (Weapon.gameObject.tag == "Weapon")
+        {
+            dep = true;
 
-        source.PlayOneShot(blood, 0.3f);
+            romperArma = Weapon.GetComponentInParent<Movimiento>();
+            if (romperArma != null)
+                romperArma.hasDamaged = true;
 
-		sangre.SetActive (true);
+            source.PlayOneShot(blood, 0.3f);
 
-        drop.SetActive(true);
+            sangre.SetActive(true);
 
-       // GetComponent<CapsuleCollider>().enabled = false;
-		// GetComponent<SphereCollider> ().enabled = true;
+            drop.SetActive(true);
 
-		anim.SetBool("isDead", true);
-		GetComponent<Chasing>().enabled = false;
+            // GetComponent<CapsuleCollider>().enabled = false;
+            // GetComponent<SphereCollider> ().enabled = true;
+
+            anim.SetBool("isDead", true);
+            //GetComponent<Chasing>().enabled = false;
+        }
     }
 
 }
