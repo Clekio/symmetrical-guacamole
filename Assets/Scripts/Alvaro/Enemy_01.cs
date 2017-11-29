@@ -9,6 +9,8 @@ public class Enemy_01 : MonoBehaviour {
     public GameObject drop;
 	public GameObject sangre;
 
+    public Rigidbody rb;
+
     Movimiento romperArma;
     public GameObject Enemigo;
 
@@ -48,8 +50,10 @@ public class Enemy_01 : MonoBehaviour {
 
             drop.SetActive(true);
 
-            // GetComponent<CapsuleCollider>().enabled = false;
-            // GetComponent<SphereCollider> ().enabled = true;
+            GetComponent<CapsuleCollider>().enabled = false;
+            //GetComponent<SphereCollider> ().enabled = true;
+            rb.isKinematic = true;
+
 
             anim.SetBool("isDead", true);
             //GetComponent<Chasing>().enabled = false;
