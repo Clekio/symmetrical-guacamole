@@ -17,8 +17,9 @@ public class Weapon : MonoBehaviour {
 
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+
         coger = FindObjectOfType<Movimiento>();
     }
 	
@@ -44,6 +45,8 @@ public class Weapon : MonoBehaviour {
         {
             if (XCI.GetButton(XboxButton.B, controller))
             {
+                coger.SonidoCogerArma();
+
                 primeraPuerta = true;
                 coger.canWeapon = false;
                 coger.hasWeapon = true;
