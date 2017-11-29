@@ -58,13 +58,17 @@ public class Weapon : MonoBehaviour {
     private void OnTriggerStay(Collider Player)
     {
 
-        Pickable = true;
+        if (Player.gameObject.tag == "Player") {
 
+            Pickable = true;
+        }
     }
 
     private void OnTriggerExit(Collider Player)
     {
-
-        Pickable = false;
+        if (Player.gameObject.tag == "Player")
+        {
+            Pickable = false;
+        }
     }
 }
