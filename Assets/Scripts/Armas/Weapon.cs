@@ -11,12 +11,18 @@ public class Weapon : MonoBehaviour {
 
     public Movimiento coger;
 
+    public DoorsEventW door;
+
     public bool Pickable = false;
 
+    public bool primeraPuerta = false;
 
 
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
+
         coger = FindObjectOfType<Movimiento>();
     }
 	
@@ -42,6 +48,10 @@ public class Weapon : MonoBehaviour {
         {
             if (XCI.GetButton(XboxButton.B, controller))
             {
+                coger.SonidoCogerArma();
+                door.SonidoPuertaAbierta();
+
+                primeraPuerta = true;
                 coger.canWeapon = false;
                 coger.hasWeapon = true;
                 coger.hasDamaged = false;

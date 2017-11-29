@@ -194,7 +194,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.11001782
+      - time: 0.1472079
         functionName: ActivateSound
         data: 
         objectReferenceParameter: {instanceID: 0}

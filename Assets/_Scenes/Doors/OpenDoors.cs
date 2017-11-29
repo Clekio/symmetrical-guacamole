@@ -6,6 +6,7 @@ public class OpenDoors : MonoBehaviour {
 
     public bool inside = false;
 
+    public DoorsEvent door;
 
 	// Use this for initialization
 	void Start () {
@@ -25,18 +26,20 @@ public class OpenDoors : MonoBehaviour {
         {
             inside = true;
 
-        }
-
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            inside = false;
+            door.SonidoPuertaAbierta();
 
         }
 
     }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        inside = false;
+
+    //    }
+
+    //}
 
 
 }

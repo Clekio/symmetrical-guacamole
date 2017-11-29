@@ -54,7 +54,10 @@ public class Movimiento : MonoBehaviour {
 
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
+
     public AudioClip AttackSound;
+    public AudioClip ArmaRota;
+    public AudioClip CogerArma;
 
 
     // Use this for initialization
@@ -166,7 +169,11 @@ public class Movimiento : MonoBehaviour {
         transform.position += transform.forward * speedAttackMove * Time.deltaTime;
     }
 
+    public void SonidoCogerArma()
+    {
 
+        source.PlayOneShot(CogerArma, 1f);
+    }
 
     /*
     *
@@ -205,13 +212,20 @@ public class Movimiento : MonoBehaviour {
         attacking = false;
         doAttackMove = false;
         canAttack = true;
-        if (hasDamaged == true) hasWeapon = false;
+        if (hasDamaged == true)
+
+        {
+            hasWeapon = false;
+
+            source.PlayOneShot(ArmaRota, 0.1f);
+        }
     }
 
     public void CleanWeapon()
     {
         //Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
         hasWeapon = false;
+
     }
 
     public void Trigger1()
@@ -232,6 +246,7 @@ public class Movimiento : MonoBehaviour {
     {
         Area3.SetActive(false);
     }
+
 
 
 //    void ActivateAttackTrigger(int triggerNumber)

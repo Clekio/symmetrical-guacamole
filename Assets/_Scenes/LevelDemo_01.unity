@@ -14819,6 +14819,7 @@ GameObject:
   - component: {fileID: 641308207}
   - component: {fileID: 641308206}
   - component: {fileID: 641308205}
+  - component: {fileID: 641308210}
   m_Layer: 0
   m_Name: Arma_Drop
   m_TagString: Untagged
@@ -14842,6 +14843,7 @@ MonoBehaviour:
   mainchar: {fileID: 566848829}
   coger: {fileID: 566848839}
   Pickable: 0
+  primeraPuerta: 0
 --- !u!23 &641308206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14912,6 +14914,86 @@ Transform:
   m_Father: {fileID: 597127556}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &641308210
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 641308204}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &641314910
 GameObject:
   m_ObjectHideFlags: 0
@@ -20990,6 +21072,7 @@ MonoBehaviour:
   mainchar: {fileID: 566848829}
   coger: {fileID: 566848839}
   Pickable: 0
+  primeraPuerta: 0
 --- !u!23 &898349188
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33478,6 +33561,16 @@ Prefab:
       propertyPath: obj
       value: 
       objectReference: {fileID: 1298078381}
+    - target: {fileID: 114295646628940706, guid: beacf0dc0ec7b304f9dbb7b85676f3a8,
+        type: 2}
+      propertyPath: ArmaRota
+      value: 
+      objectReference: {fileID: 8300000, guid: 8630c72572da2284d8eedf25288333cf, type: 3}
+    - target: {fileID: 114295646628940706, guid: beacf0dc0ec7b304f9dbb7b85676f3a8,
+        type: 2}
+      propertyPath: CogerArma
+      value: 
+      objectReference: {fileID: 8300000, guid: e6deea192e00e8341870a2220d436359, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beacf0dc0ec7b304f9dbb7b85676f3a8, type: 2}
   m_IsPrefabParent: 0
@@ -37645,7 +37738,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636341721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 329.5, y: 166, z: 0}
+  m_LocalPosition: {x: 546, y: 168, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1682104709}
@@ -38663,7 +38756,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1682104708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -329.5, y: -156, z: 0}
+  m_LocalPosition: {x: -546, y: -158, z: 0}
   m_LocalScale: {x: 1, y: 0.6, z: 1}
   m_Children:
   - {fileID: 765523423}

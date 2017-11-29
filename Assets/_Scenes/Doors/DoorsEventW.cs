@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorsEvent : MonoBehaviour
+public class DoorsEventW : MonoBehaviour
 {
     public Animator anim;
 
-    public OpenDoors inside;
+    public Weapon open;
 
     private AudioSource source;
 
     public AudioClip OpenDoor;
 
-
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
-        source = GetComponent<AudioSource>();
+        source = GetComponent <AudioSource> ();
     }
 
     // Update is called once per frame
@@ -25,13 +24,10 @@ public class DoorsEvent : MonoBehaviour
     {
 
 
-        if (inside.inside == true)
+        if (open.primeraPuerta == true)
         {
-
             anim.SetBool("Open", true);
-
         }
-
 
     }
 
@@ -41,6 +37,5 @@ public class DoorsEvent : MonoBehaviour
         source.PlayOneShot(OpenDoor, 0.3f);
 
     }
-
 
 }
