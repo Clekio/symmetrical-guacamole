@@ -13,6 +13,8 @@ public class Weapon : MonoBehaviour {
 
     public bool Pickable = false;
 
+    public bool primeraPuerta = false;
+
 
 
 	// Use this for initialization
@@ -42,6 +44,7 @@ public class Weapon : MonoBehaviour {
         {
             if (XCI.GetButton(XboxButton.B, controller))
             {
+                primeraPuerta = true;
                 coger.canWeapon = false;
                 coger.hasWeapon = true;
                 coger.hasDamaged = false;

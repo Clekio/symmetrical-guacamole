@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorsEvent : MonoBehaviour
+public class DoorsEventW : MonoBehaviour
 {
     public Animator anim;
 
-    public OpenDoors inside;
+    public Weapon open;
 
     // Use this for initialization
     void Start()
@@ -19,13 +19,10 @@ public class DoorsEvent : MonoBehaviour
     {
 
 
-        if (inside.inside == true)
+        if (open.primeraPuerta == true)
         {
-
             anim.SetBool("Open", true);
-
         }
-
 
     }
 

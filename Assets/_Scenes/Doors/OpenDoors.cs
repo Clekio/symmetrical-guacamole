@@ -28,15 +28,15 @@ public class OpenDoors : MonoBehaviour {
         }
 
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            inside = false;
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        inside = false;
 
-        }
+    //    }
 
-    }
+    //}
 
 
 }
