@@ -10,7 +10,10 @@ public class Radio: MonoBehaviour {
 	public GameObject Sangre3;
 	public GameObject Modelo;
 
-	[Range(0.1f, 100f)]
+    private AudioSource source;
+    public AudioClip boom;
+
+    [Range(0.1f, 100f)]
 	public float radius = 1.0f;
 
 	[Range(3, 256)]
@@ -18,7 +21,10 @@ public class Radio: MonoBehaviour {
 
 	void Start ( ) {
 		DoRenderer();
-	}
+
+        source = GetComponent<AudioSource>();
+
+    }
 
 	public void DoRenderer ( ) {
 		LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
@@ -40,14 +46,28 @@ public class Radio: MonoBehaviour {
 	private void attacking ()
 	{
 		GetComponent<LineRenderer>().enabled = false;
-		Boom.SetActive(true);
+        source.PlayOneShot(boom, 1f);
+        Boom.SetActive(true);
 		Sangre1.SetActive(true);
 		Sangre2.SetActive(true);
 		Sangre3.SetActive(true);
 		Modelo.SetActive(false);
-        Destroy(this.gameObject);
+
+        StartCoroutine(Count1());
+
+
     }
 
+
+    IEnumerator Count1()
+    {
+
+        yield return new WaitForSeconds(2.2f);
+
+        Destroy(this.gameObject);
+
+        yield return null;
+    }
 
 
 }
