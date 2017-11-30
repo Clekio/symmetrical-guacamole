@@ -66,6 +66,8 @@ public class Enemy_01 : MonoBehaviour {
         {
             dep = true;
 
+            cont.contador = cont.contador - 1;
+
             source.PlayOneShot(blood, 0.15f);
 
             sangre.SetActive(true);

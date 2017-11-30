@@ -16,7 +16,7 @@ public class ContadorPuertas : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (contador == 0)
+        if (contador <= 0)
         {
             inside = true;
         
