@@ -163,7 +163,7 @@ public class Movimiento : MonoBehaviour {
 
     public void Paso()
     {
-        source.PlayOneShot(stepSound, 0.009f);
+        source.PlayOneShot(stepSound, 0.005f);
     }
     public float speedAttackMove = 8;
     public void AttackMove()

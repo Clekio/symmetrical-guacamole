@@ -8,15 +8,23 @@ public class OpenDoors : MonoBehaviour {
 
     public DoorsEvent door;
 
-	// Use this for initialization
-	void Start () {
+    public float contador;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        if (contador == 0)
+        {
+            inside = true;
+
+
+        }
+    }
 
 
 
