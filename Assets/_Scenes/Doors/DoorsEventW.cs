@@ -6,7 +6,7 @@ public class DoorsEventW : MonoBehaviour
 {
     public Animator anim;
 
-    public Weapon open;
+    public WeaponDoor open;
 
     private AudioSource source;
 
@@ -34,7 +34,7 @@ public class DoorsEventW : MonoBehaviour
     public void SonidoPuertaAbierta()
     {
 
-        source.PlayOneShot(OpenDoor, 0.3f);
+        source.PlayOneShot(OpenDoor, 2.3f);
 
     }
 

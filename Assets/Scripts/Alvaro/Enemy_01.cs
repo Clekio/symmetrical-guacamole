@@ -6,6 +6,8 @@ public class Enemy_01 : MonoBehaviour {
 
     Animator anim;
 
+    public OpenDoors cont;
+
     public GameObject drop;
 	public GameObject sangre;
 
@@ -39,6 +41,8 @@ public class Enemy_01 : MonoBehaviour {
         if (Weapon.gameObject.tag == "Weapon")
         {
             dep = true;
+
+            cont.contador = cont.contador - 1;
 
             romperArma = Weapon.GetComponentInParent<Movimiento>();
             if (romperArma != null)
