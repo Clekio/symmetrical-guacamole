@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class LifeBar : MonoBehaviour {
 
-    public Image currentHealth;
-    public Text ratioText;
-
     private float hitpoint = 150;
     private float maxHitpoint = 150;
+	//edit guille
+	[Header("REFERENCIAS")]
+	public Image healthBar;
+	public Text ratioText;
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +22,8 @@ public class LifeBar : MonoBehaviour {
 
     private void UpdateHealthbar()
     {
+		healthBar.fillAmount = hitpoint / maxHitpoint;
         float ratio = hitpoint / maxHitpoint;
-        currentHealth.rectTransform.localScale = new Vector3(ratio, 1, 1);
         ratioText.text = (ratio * 100).ToString("0") + '%';
     }
 
@@ -50,11 +51,5 @@ public class LifeBar : MonoBehaviour {
 
         UpdateHealthbar();
     }
-
-
-	
-	// Update is called once per frame
-	void Update () {
 		
-	}
 }
