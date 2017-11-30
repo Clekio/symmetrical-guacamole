@@ -57,7 +57,27 @@ public class Enemy_01 : MonoBehaviour {
 
             anim.SetBool("isDead", true);
             //GetComponent<Chasing>().enabled = false;
+
+        } else if (Weapon.gameObject.tag == "Bomba")
+        {
+            dep = true;
+
+            source.PlayOneShot(blood, 0.15f);
+
+            sangre.SetActive(true);
+
+            drop.SetActive(true);
+
+            GetComponent<CapsuleCollider>().enabled = false;
+            //GetComponent<SphereCollider> ().enabled = true;
+            rb.isKinematic = true;
+
+
+            anim.SetBool("isDead", true);
+
         }
+
+
     }
 
 }
