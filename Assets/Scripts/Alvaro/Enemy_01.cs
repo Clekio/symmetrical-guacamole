@@ -44,7 +44,7 @@ public class Enemy_01 : MonoBehaviour {
             if (romperArma != null)
                 romperArma.hasDamaged = true;
 
-            source.PlayOneShot(blood, 0.3f);
+            source.PlayOneShot(blood, 0.15f);
 
             sangre.SetActive(true);
 

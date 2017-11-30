@@ -17,6 +17,12 @@ public class Chasing_Ranged: MonoBehaviour {
     public bool Attacking;
 
 
+    public Rigidbody throwable;
+
+    public Transform spawn;
+
+    public float speed;
+
     //Para hacer daño
     public bool damaging;
 	public float damage;
@@ -98,8 +104,12 @@ public class Chasing_Ranged: MonoBehaviour {
         //Attacking = false;
 
 	}
-	private void attacking ()
+	public void FireBall ()
 	{
-		fireball.SetActive (true);
-	}
+
+        Rigidbody lanzado = Instantiate(throwable, spawn.position, spawn.rotation) as Rigidbody;
+
+        lanzado.velocity = transform.forward * speed;
+
+    }
 }

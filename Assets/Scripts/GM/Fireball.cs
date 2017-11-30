@@ -4,19 +4,42 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public Rigidbody rb;
 
-      
+    public Chasing_Ranged direction;
+
+    //Para hacer daño
+    public bool damaging;
+    public float damage;
+
+    private AudioSource source;
+
+    public AudioClip fire;
+
+    // Use this for initialization
+    void Start () {
+
+        source = GetComponent<AudioSource>();
+
+        source.PlayOneShot(fire, 0.1f);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		transform.position += transform.forward * Time.deltaTime;
-	}
-	IEnumerator waitBox(){
-		yield return new WaitForSeconds (1);
-		GetComponent<BoxCollider>().enabled = true;
 
-	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(this.gameObject);
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+            if (other.tag == "Player")
+            {
+
+                    other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
+
+
+            }
+
+        
+        Destroy(this.gameObject);
+    }
 }

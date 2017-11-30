@@ -16,6 +16,9 @@ public class Chasing : MonoBehaviour {
     public bool death;
     public bool Attacking;
 
+    private AudioSource source;
+
+    public AudioClip dodamage;
 
     //Para hacer daño
     public bool damaging;
@@ -24,7 +27,8 @@ public class Chasing : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
-	}
+        source = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -92,9 +96,9 @@ public class Chasing : MonoBehaviour {
     public void Hit()
 	{ 
 		GetComponent<BoxCollider>().enabled = true;
-        
+        source.PlayOneShot(dodamage, 0.1f);
 
-	}
+    }
 	public void EndHit()
 	{ 
 		GetComponent<BoxCollider>().enabled = false;

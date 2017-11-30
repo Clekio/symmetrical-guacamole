@@ -45,5 +45,9 @@ public class Radio: MonoBehaviour {
 		Sangre2.SetActive(true);
 		Sangre3.SetActive(true);
 		Modelo.SetActive(false);
-	}
+        Destroy(this.gameObject);
+    }
+
+
+
 }
