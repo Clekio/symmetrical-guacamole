@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_Boss : MonoBehaviour
 {
+	[Header("----- REFERENCIAS")]
+	public Image healthBar;
 
     Animator anim;
 
@@ -19,7 +22,9 @@ public class Enemy_Boss : MonoBehaviour
 
     public bool dep = false;
 
-    public float vida = 12f;
+    public float vidaMaxima = 12f;
+	public float vida =12f;
+
 
 
     public AudioClip blood;
@@ -34,9 +39,9 @@ public class Enemy_Boss : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-
+		healthBar.fillAmount = vida / vidaMaxima;
     }
 
 
