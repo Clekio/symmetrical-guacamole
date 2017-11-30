@@ -14564,7 +14564,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 593063759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -62.4, z: 0}
+  m_LocalPosition: {x: 0, y: -210.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1221822455}
@@ -14573,7 +14573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 29.1}
+  m_AnchoredPosition: {x: 0, y: 14.9}
   m_SizeDelta: {x: 150, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593063761
@@ -31362,11 +31362,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340e4355123ac324ba70008a9a7f5775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 1221822456}
   drop: {fileID: 0}
   sangre: {fileID: 0}
   rb: {fileID: 1125971361}
   Enemigo: {fileID: 1125971355}
   dep: 0
+  vidaMaxima: 12
   vida: 12
   blood: {fileID: 8300000, guid: f95cf47bfa5d8c446aa56bee156e4412, type: 3}
 --- !u!82 &1125971365
@@ -34269,7 +34271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5808823, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -37634,12 +37636,12 @@ Prefab:
     - target: {fileID: 224167206104101858, guid: 5c4f07bb9d0d6794a80527c0940bc2d4,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 162.5
+      value: 304
       objectReference: {fileID: 0}
     - target: {fileID: 224167206104101858, guid: 5c4f07bb9d0d6794a80527c0940bc2d4,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 91.5
+      value: 171
       objectReference: {fileID: 0}
     - target: {fileID: 224167206104101858, guid: 5c4f07bb9d0d6794a80527c0940bc2d4,
         type: 2}
@@ -37724,6 +37726,16 @@ Prefab:
     - target: {fileID: 1693031857799590, guid: 5c4f07bb9d0d6794a80527c0940bc2d4, type: 2}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713397761452812, guid: 5c4f07bb9d0d6794a80527c0940bc2d4,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713397761452812, guid: 5c4f07bb9d0d6794a80527c0940bc2d4,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c4f07bb9d0d6794a80527c0940bc2d4, type: 2}
