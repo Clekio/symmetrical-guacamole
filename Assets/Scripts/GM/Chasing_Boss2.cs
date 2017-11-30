@@ -8,7 +8,7 @@ public class Chasing_Boss2: MonoBehaviour {
 	private Animator anim;
 	[Header("----- REFERENCIAS")]
 	public Transform player;
-	public Enemy_01 dep;
+	public Enemy_Boss dep;
 	public GameObject PartPisada;
 
 	[Header("----- SONIDOS")]
@@ -64,17 +64,19 @@ public class Chasing_Boss2: MonoBehaviour {
 		if (death == true)
 		{
 			//Stop();
-			EndHit();
+			//EndHit();
 		}
 
 	}
 	//cosas de alvaro
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.gameObject.tag == "Player")
 		{
 			if (death == false)
 			{
+                Debug.Log("pene");
+
 				other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
 			}
 		}
@@ -90,18 +92,18 @@ public class Chasing_Boss2: MonoBehaviour {
 		Attacking = false;
 	}
 
-	public void Hit()
-	{ 
-		GetComponent<BoxCollider>().enabled = true;
+	//public void Hit()
+	//{ 
+	//	GetComponent<BoxCollider>().enabled = true;
 
 
-	}
-	public void EndHit()
-	{ 
-		GetComponent<BoxCollider>().enabled = false;
-		//Attacking = false;
+	//}
+	//public void EndHit()
+	//{ 
+	//	GetComponent<BoxCollider>().enabled = false;
+	//	//Attacking = false;
 
-	}
+	//}
 	public void pisoton(){
 		PartPisada.SetActive(true);
 		GetComponent<SphereCollider> ().enabled = true;

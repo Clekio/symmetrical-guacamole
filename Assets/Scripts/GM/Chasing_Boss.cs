@@ -21,15 +21,20 @@ public class Chasing_Boss: MonoBehaviour {
 	public bool death;
 	public bool Attacking;
 
+    private AudioSource source;
 
-	//Para hacer daño
-	public bool damaging;
+    public AudioClip grito;
+
+
+    //Para hacer daño
+    public bool damaging;
 	public float damage;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
-	}
+        source = GetComponent<AudioSource>();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -56,9 +61,12 @@ public class Chasing_Boss: MonoBehaviour {
 
 	//Locura
 	private void Roar(){
-		//EJECUTAR SONIDO AQUI
+        //EJECUTAR SONIDO AQUI
 
-	}
+        source.PlayOneShot(grito, 1.5f);
+
+
+    }
 	private void RoarEnd(){
 		anim.SetBool("isRoar", false);
 		anim.SetBool("isIdle", true);
