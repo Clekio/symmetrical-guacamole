@@ -7,13 +7,23 @@ public class LifeBar : MonoBehaviour {
 
     private float hitpoint = 150;
     private float maxHitpoint = 150;
+
+    private AudioSource source;
+    public AudioClip Pain;
+
+
 	//edit guille
 	[Header("----- REFERENCIAS")]
 	public Image healthBar;
 	public Text ratioText;
 
+
+
+
 	// Use this for initialization
 	void Start () {
+
+        source = GetComponent<AudioSource>();
 
         UpdateHealthbar();
 
@@ -29,6 +39,8 @@ public class LifeBar : MonoBehaviour {
 
 	public void TakeDamage (float damage)
     {
+        source.PlayOneShot(Pain, 0.2f);
+
         hitpoint -= damage;
         if (hitpoint < 0)
         {
