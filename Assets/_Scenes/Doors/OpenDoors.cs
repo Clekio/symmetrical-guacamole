@@ -36,6 +36,8 @@ public class OpenDoors : MonoBehaviour {
 
             door.SonidoPuertaAbierta();
 
+            Destroy(this.gameObject);
+
         }
 
     }
