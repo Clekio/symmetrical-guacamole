@@ -12,11 +12,16 @@ public class Fireball : MonoBehaviour {
     public bool damaging;
     public float damage;
 
+    private AudioSource source;
+
+    public AudioClip fire;
 
     // Use this for initialization
     void Start () {
 
-      
+        source = GetComponent<AudioSource>();
+
+        source.PlayOneShot(fire, 0.1f);
     }
 
 
@@ -31,7 +36,7 @@ public class Fireball : MonoBehaviour {
 
                     other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
 
-            Debug.Log("pene");
+
             }
 
         

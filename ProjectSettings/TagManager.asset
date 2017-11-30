@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Paredes
   - Weapon
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Recogible
   - Trigger
   - Enemy
-  - 
+  - Bomba
   - 
   - 
   - 

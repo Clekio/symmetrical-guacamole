@@ -8,10 +8,17 @@ public class ThrowThings : MonoBehaviour {
 
     public Movimiento direction;
 
-	// Use this for initialization
-	void Start () {
+    private AudioSource source;
 
-      
+    public AudioClip broken;
+
+    // Use this for initialization
+    void Start () {
+
+        source = GetComponent<AudioSource>();
+
+        
+
     }
 	
 	// Update is called once per frame
@@ -21,10 +28,27 @@ public class ThrowThings : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject);
+        source.PlayOneShot(broken, 0.4f);
+
+        StartCoroutine(Count1());
+
+        //Destroy(this.gameObject);
     }
-    public void OnTriggerEnter(Collider other)
+    //public void OnTriggerEnter(Collider other)
+    //{
+
+    //    source.PlayOneShot(broken, 0.4f);
+
+    //    Destroy(this.gameObject);
+    //}
+
+
+    IEnumerator Count1()
     {
+
+        yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
+
+        yield return null;
     }
 }

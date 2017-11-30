@@ -106,9 +106,6 @@ public class Chasing_Ranged: MonoBehaviour {
 	}
 	public void FireBall ()
 	{
-        //fireball.SetActive (true);
-
-        Debug.Log("pene");
 
         Rigidbody lanzado = Instantiate(throwable, spawn.position, spawn.rotation) as Rigidbody;
 
