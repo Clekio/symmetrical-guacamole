@@ -148,12 +148,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: warrok_MAT
-    second: {fileID: 2100000, guid: a5853ab732981654d98be6ed35a2f1ed, type: 2}
+    second: {fileID: 2100000, guid: 336b07e60ebb87145a30e34a7185ee01, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
