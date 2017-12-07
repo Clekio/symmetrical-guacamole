@@ -1483,8 +1483,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246636585046880}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.07, y: 0, z: 2.56}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.096136, y: -1.7317469, z: 4.6972446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4396134493658884}
@@ -2220,7 +2220,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &65065602415888774
 BoxCollider:
@@ -2326,6 +2326,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  m_ExtensionPropertyValues: []
 --- !u!95 &95011705476136274
 Animator:
   serializedVersion: 3
@@ -2382,8 +2383,8 @@ MonoBehaviour:
   spawn: {fileID: 4609856937253804}
   speed: 20
   damaging: 0
-  damage: 0
-  fireball: {fileID: 0}
+  damage: 500
+  fireball: {fileID: 1115799668447090, guid: c5431d378ed868543b5f8c00ce44d7f5, type: 2}
 --- !u!114 &114957181863285068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2395,6 +2396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541f7b570cc9efd4997be38a2a3e6bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cont: {fileID: 0}
   drop: {fileID: 1985400275290310}
   sangre: {fileID: 1355616630975674}
   rb: {fileID: 54320495621202536}
@@ -2440,7 +2442,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a5853ab732981654d98be6ed35a2f1ed, type: 2}
+  - {fileID: 2100000, guid: 336b07e60ebb87145a30e34a7185ee01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
