@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using XboxCtrlrInput;	
 
 public class LifeBar : MonoBehaviour {
 
@@ -17,8 +18,10 @@ public class LifeBar : MonoBehaviour {
 	public Image healthBar;
 	public Text ratioText;
 
+	//Cosas muerte mirar void update
 
-
+	public GameObject die;
+	Animator anim;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +30,20 @@ public class LifeBar : MonoBehaviour {
 
         UpdateHealthbar();
 
-    }
+		Time.timeScale = 1;
+		anim.SetBool("isDead", false);
 
+    }
+	void Update () {
+		if (hitpoint <= 0) {
+			Time.timeScale = 0;
+			die.SetActive (true);
+
+			if (XCI.GetButtonDown(XboxButton.A)){
+				Application.LoadLevel (Application.loadedLevel);
+			}
+		}
+	}
 
     private void UpdateHealthbar()
     {
