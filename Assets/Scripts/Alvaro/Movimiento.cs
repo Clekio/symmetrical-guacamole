@@ -28,7 +28,7 @@ public class Movimiento : MonoBehaviour {
 	public bool doAttack = false;
     bool doAttackMove = false;
 
-
+    public GameObject slash;
 
     public float VelocidadMax;
     public XboxController controller;
@@ -190,6 +190,18 @@ public class Movimiento : MonoBehaviour {
     *
     */
     
+    public void ParticlesOn()
+    {
+        slash.SetActive(true);
+        Debug.Log("pene");
+    }
+    public void ParticlesOff()
+    {
+        slash.SetActive(false);
+        Debug.Log("pene");
+    }
+
+
     public void ActivateSound()
     {
         
@@ -199,7 +211,7 @@ public class Movimiento : MonoBehaviour {
 
     public void ActivateAttackMove()
     {
-
+        slash.SetActive(true);
         doAttackMove = true;
     }
     public void EndAttackMove()
@@ -217,7 +229,7 @@ public class Movimiento : MonoBehaviour {
     public void EndAttack() {
 
         weaponTriggers[2].SetActive(false);
-        
+        slash.SetActive(false);
         attacking = false;
         doAttackMove = false;
         canAttack = true;
