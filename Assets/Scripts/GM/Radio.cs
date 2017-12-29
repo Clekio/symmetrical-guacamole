@@ -10,6 +10,8 @@ public class Radio: MonoBehaviour {
 	public GameObject Sangre3;
 	public GameObject Modelo;
 
+    public Rigidbody rb;
+
     private AudioSource source;
     public AudioClip boom;
 
@@ -53,6 +55,10 @@ public class Radio: MonoBehaviour {
 		Sangre3.SetActive(true);
 		Modelo.SetActive(false);
 
+        GetComponent<CapsuleCollider>().enabled = false;
+        //GetComponent<SphereCollider> ().enabled = true;
+        rb.isKinematic = true;
+
         StartCoroutine(Count1());
 
 
@@ -62,9 +68,9 @@ public class Radio: MonoBehaviour {
     IEnumerator Count1()
     {
 
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(0.2f);
 
-        Destroy(this.gameObject);
+        GetComponent<SphereCollider>().enabled = false;
 
         yield return null;
     }

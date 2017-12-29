@@ -100,6 +100,12 @@ public class Chasing_Bomb: MonoBehaviour {
 		GetComponent<SphereCollider>().enabled = true;
 		GetComponent<Radio>().enabled = false;
 	}
+
+    private void stopDamage()
+    {
+        GetComponent<SphereCollider>().enabled = false;
+
+    }
 	private void Radio ()
 	{
 		GetComponent<Radio>().enabled = true;
