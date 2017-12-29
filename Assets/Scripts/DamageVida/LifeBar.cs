@@ -13,8 +13,10 @@ public class LifeBar : MonoBehaviour {
     public AudioClip Pain;
 
 
-	//edit guille
-	[Header("----- REFERENCIAS")]
+    public bool alive = true;
+
+    //edit guille
+    [Header("----- REFERENCIAS")]
 	public Image healthBar;
 	public Text ratioText;
 
@@ -38,6 +40,7 @@ public class LifeBar : MonoBehaviour {
 		if (hitpoint <= 0) {
 			Time.timeScale = 0;
 			die.SetActive (true);
+            alive = false;
 
 			if (XCI.GetButtonDown(XboxButton.A)){
 				Application.LoadLevel (Application.loadedLevel);

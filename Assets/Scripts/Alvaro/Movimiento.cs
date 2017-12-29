@@ -7,6 +7,8 @@ public class Movimiento : MonoBehaviour {
 
     Animator anim;
 
+
+
     public float speed;
     public float speed2;
     public float Vgiro;

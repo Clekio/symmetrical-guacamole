@@ -93,16 +93,20 @@ public class Chasing_Ranged: MonoBehaviour {
     }
 
     public void Hit()
-	{ 
-		GetComponent<BoxCollider>().enabled = true;
-        
+    {
+        if (death == false)
+        {
+            GetComponent<BoxCollider>().enabled = true;
+        }
 
 	}
 	public void EndHit()
-	{ 
-		GetComponent<BoxCollider>().enabled = false;
-        //Attacking = false;
-
+    {
+        if (death == false)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+            //Attacking = false;
+        }
 	}
 	public void FireBall ()
 	{
