@@ -191,15 +191,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.42276105
-        functionName: FireBall
+      - time: 0.110129766
+        functionName: Stop
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.41183293
-        functionName: Stop
+      - time: 0.4239776
+        functionName: FireBall
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
