@@ -10,6 +10,10 @@ public class ThrowThings : MonoBehaviour {
 
     private AudioSource source;
 
+    public Transform spawn;
+
+    public GameObject prefab;
+
     public AudioClip broken;
 
     // Use this for initialization
@@ -45,8 +49,10 @@ public class ThrowThings : MonoBehaviour {
 
     IEnumerator Count1()
     {
-
         yield return new WaitForSeconds(0.2f);
+
+        Instantiate(prefab, spawn.position, spawn.rotation);
+        Debug.Log("pene");
         Destroy(this.gameObject);
 
         yield return null;
