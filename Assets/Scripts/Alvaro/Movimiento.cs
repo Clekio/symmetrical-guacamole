@@ -30,6 +30,8 @@ public class Movimiento : MonoBehaviour {
 
     public GameObject slash;
 
+    public GameObject armaRota;
+
     public float VelocidadMax;
     public XboxController controller;
 
@@ -237,7 +239,8 @@ public class Movimiento : MonoBehaviour {
 
         {
             hasWeapon = false;
-
+            armaRota.SetActive(true);
+            StartCoroutine(Count1());
             source.PlayOneShot(ArmaRota, 0.1f);
         }
     }
@@ -268,18 +271,25 @@ public class Movimiento : MonoBehaviour {
         Area3.SetActive(false);
     }
 
+    IEnumerator Count1()
+    {
 
+        yield return new WaitForSeconds(0.5f);
+        armaRota.SetActive(false);
 
-//    void ActivateAttackTrigger(int triggerNumber)
-//    {
-//        if (triggerNumber < weaponTriggers.Count)
-//        {
-//            weaponTriggers[triggerNumber].SetActive(true);
-//        }
-//        if(triggerNumber > 0 && triggerNumber <= weaponTriggers.Count)
-//        {
-//            weaponTriggers[triggerNumber-1].SetActive(false);
-//        }
+        yield return null;
+    }
 
-//    }
+    //    void ActivateAttackTrigger(int triggerNumber)
+    //    {
+    //        if (triggerNumber < weaponTriggers.Count)
+    //        {
+    //            weaponTriggers[triggerNumber].SetActive(true);
+    //        }
+    //        if(triggerNumber > 0 && triggerNumber <= weaponTriggers.Count)
+    //        {
+    //            weaponTriggers[triggerNumber-1].SetActive(false);
+    //        }
+
+    //    }
 }

@@ -12,6 +12,7 @@ public class LifeBar : MonoBehaviour {
     private AudioSource source;
     public AudioClip Pain;
 
+    public GameObject feedback;
 
     public bool alive = true;
 
@@ -59,6 +60,10 @@ public class LifeBar : MonoBehaviour {
     {
         source.PlayOneShot(Pain, 0.2f);
 
+        feedback.SetActive(true);
+
+        StartCoroutine(Count1());
+
         hitpoint -= damage;
         if (hitpoint < 0)
         {
@@ -81,5 +86,14 @@ public class LifeBar : MonoBehaviour {
 
         UpdateHealthbar();
     }
-		
+
+    IEnumerator Count1()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+        feedback.SetActive(false);
+
+        yield return null;
+    }
+
 }
