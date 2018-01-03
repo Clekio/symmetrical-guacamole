@@ -34,7 +34,7 @@ public class DoorsEventW : MonoBehaviour
     public void SonidoPuertaAbierta()
     {
 
-        source.PlayOneShot(OpenDoor, 0.3f);
+        source.PlayOneShot(OpenDoor, 0.2f);
 
     }
 
