@@ -28,7 +28,7 @@ public class ThrowThings : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        source.PlayOneShot(broken, 0.4f);
+        source.PlayOneShot(broken, 0.2f);
 
         StartCoroutine(Count1());
 
