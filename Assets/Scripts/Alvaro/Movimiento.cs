@@ -103,7 +103,7 @@ public class Movimiento : MonoBehaviour {
         {
             Axe.GetComponent<SkinnedMeshRenderer>().enabled = true;
 
-            if (canAttack == true && XCI.GetButtonDown(XboxButton.X, controller))
+            if (canAttack == true && XCI.GetButton(XboxButton.X, controller))
             {
                 anim.SetTrigger("Attack");
                 canAttack = false;

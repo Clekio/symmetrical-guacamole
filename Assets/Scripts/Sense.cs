@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
 using System;
 
 public class Sense : MonoBehaviour
@@ -10,9 +11,11 @@ public class Sense : MonoBehaviour
 
     public LayerMask checkLayers;
 
+    public XboxController controller;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (XCI.GetButtonDown(XboxButton.Y, controller))
         {
             // if only one, attack that one
 
