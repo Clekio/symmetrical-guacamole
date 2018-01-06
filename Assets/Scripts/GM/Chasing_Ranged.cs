@@ -36,7 +36,7 @@ public class Chasing_Ranged: MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
   
 

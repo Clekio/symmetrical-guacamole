@@ -12,6 +12,7 @@ public class DoorsEvent : MonoBehaviour
 
     public AudioClip OpenDoor;
 
+    public bool close = false;
 
     // Use this for initialization
     void Start()
@@ -29,6 +30,13 @@ public class DoorsEvent : MonoBehaviour
         {
 
             anim.SetBool("Open", true);
+
+        }
+
+        if (close == true)
+        {
+
+            anim.SetBool("Close", true);
 
         }
 

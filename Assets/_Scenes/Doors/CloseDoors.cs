@@ -8,6 +8,8 @@ public class CloseDoors : MonoBehaviour
 
     public OpenDoors inside;
 
+    public DoorsEvent close;
+
     // Use this for initialization
     void Start()
     {
@@ -15,16 +17,26 @@ public class CloseDoors : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    if (inside.inside == true)
+    //    {
+
+    //        anim.Play("CloseDoor");
+
+
+    //    }
+
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (inside.inside == true)
+        if (other.tag == "Player")
+
         {
-
-            anim.Play("CloseDoor");
-
-
+          
+            close.close = true;
         }
-
     }
 
 
