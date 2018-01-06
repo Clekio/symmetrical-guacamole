@@ -52,7 +52,7 @@ public class ThrowThings : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
 
         Instantiate(prefab, spawn.position, spawn.rotation);
-        Debug.Log("pene");
+
         Destroy(this.gameObject);
 
         yield return null;

@@ -33,6 +33,7 @@ public class Enemy_01 : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+
 	}
 
     
@@ -40,9 +41,16 @@ public class Enemy_01 : MonoBehaviour {
     {
         if (Weapon.gameObject.tag == "Weapon")
         {
-            dep = true;
 
-            cont.contador = cont.contador - 1;
+            if (dep == false)
+            {
+                gameObject.layer = 0;
+
+                dep = true;
+
+                cont.contador = cont.contador - 1;
+            }
+           
 
             romperArma = Weapon.GetComponentInParent<Movimiento>();
             if (romperArma != null)
@@ -64,9 +72,12 @@ public class Enemy_01 : MonoBehaviour {
 
         } else if (Weapon.gameObject.tag == "Bomba")
         {
-            dep = true;
+            if (dep == false)
+            {
+                dep = true;
 
-            cont.contador = cont.contador - 1;
+                cont.contador = cont.contador - 1;
+            }
 
             source.PlayOneShot(blood, 0.15f);
 
