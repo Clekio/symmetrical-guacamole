@@ -7,7 +7,7 @@ public class Movimiento : MonoBehaviour {
 
     Animator anim;
 
-
+    public Sense atacado;
 
     public float speed;
     public float speed2;
@@ -211,9 +211,13 @@ public class Movimiento : MonoBehaviour {
         source.PlayOneShot(AttackSound, vol);
     }
 
-    public void ActivateAttackMove()
+    public void Slashed()
     {
         slash.SetActive(true);
+    }
+
+    public void ActivateAttackMove()
+    {
         doAttackMove = true;
     }
     public void EndAttackMove()
@@ -221,16 +225,43 @@ public class Movimiento : MonoBehaviour {
         doAttackMove = false;
     }
 
+    //Girar Antes de lanzar
+
+
+    public void TurningToLanzar()
+    {
+
+        if (atacado.cerca == true)
+        {
+            Vector3 direction = atacado.enemy.position - this.transform.position;
+            direction.y = 0;
+
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 100f);
+        }
+    }
+
+
+        // Sólo enemigos de la sala?
+
     public void ThrowIt()
     {
-        Rigidbody lanzado = Instantiate(throwable, spawn.position, spawn.rotation) as Rigidbody;
+        //if lanzado = 0 then this
+        //if (atacado.cerca == false)
+        //{
+            Rigidbody lanzado = Instantiate(throwable, spawn.position, spawn.rotation) as Rigidbody;
 
-        lanzado.velocity = transform.forward * speed2;
+            lanzado.velocity = transform.forward * speed2;
+        //}
+        //else if (atacado.cerca == true){
+
+        //        Rigidbody lanzado = Instantiate(throwable, spawn.position, spawn.rotation) as Rigidbody;
+        //        lanzado.velocity = transform.forward * speed2;
+        //}
     }
 
     public void EndAttack() {
 
-        weaponTriggers[2].SetActive(false);
+        //weaponTriggers[2].SetActive(false);
         slash.SetActive(false);
         attacking = false;
         doAttackMove = false;

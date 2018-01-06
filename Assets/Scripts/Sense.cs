@@ -13,9 +13,15 @@ public class Sense : MonoBehaviour
 
     public XboxController controller;
 
+    public Transform enemy;
+
+    public bool cerca;
+
+    float n;
+
     private void Update()
     {
-        if (XCI.GetButtonDown(XboxButton.Y, controller))
+        if (XCI.GetButtonDown(XboxButton.Y, controller) || XCI.GetButtonDown(XboxButton.X, controller))
         {
             // if only one, attack that one
 
@@ -25,6 +31,16 @@ public class Sense : MonoBehaviour
             foreach(Collider item in colliders)
             {
                 Debug.Log(item.name);
+            }
+
+            if (colliders.Length >= 1)
+            {
+                enemy = colliders[0].transform;
+                cerca = true;
+            }
+            else
+            {
+                cerca = false;
             }
         }
     }

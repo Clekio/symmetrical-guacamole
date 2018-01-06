@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 65702602201455098}
   - component: {fileID: 23449302473320420}
   - component: {fileID: 114986813230176326}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Arma_Drop (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
