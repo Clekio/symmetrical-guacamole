@@ -44,10 +44,6 @@ public class LifeBar : MonoBehaviour {
 		if (hitpoint <= 0) {
             anim.SetBool("isDead", true);
             StartCoroutine(Muerte());
-
-			if (XCI.GetButtonDown(XboxButton.A)){
-				Application.LoadLevel (Application.loadedLevel);
-			}
 		}
 	}
 
