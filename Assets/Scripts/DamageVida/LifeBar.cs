@@ -20,15 +20,18 @@ public class LifeBar : MonoBehaviour {
     [Header("----- REFERENCIAS")]
 	public Image healthBar;
 	public Text ratioText;
+    public GameObject cam1;
+    public GameObject cam2;
 
-	//Cosas muerte mirar void update
+    //Cosas muerte mirar void update
 
-	public GameObject die;
+    public GameObject die;
 	Animator anim;
+    public bool isDead;
 
 	// Use this for initialization
 	void Start () {
-
+        anim = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
 
         UpdateHealthbar();
@@ -39,9 +42,8 @@ public class LifeBar : MonoBehaviour {
     }
 	void Update () {
 		if (hitpoint <= 0) {
-			Time.timeScale = 0;
-			die.SetActive (true);
-            alive = false;
+            anim.SetBool("isDead", true);
+            StartCoroutine(Muerte());
 
 			if (XCI.GetButtonDown(XboxButton.A)){
 				Application.LoadLevel (Application.loadedLevel);
@@ -92,6 +94,18 @@ public class LifeBar : MonoBehaviour {
 
         yield return new WaitForSeconds(0.1f);
         feedback.SetActive(false);
+
+        yield return null;
+    }
+    IEnumerator Muerte()
+    {
+        cam1.SetActive(false);
+        cam2.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        Time.timeScale = 0;
+        die.SetActive(true);
+        alive = false;
+
 
         yield return null;
     }
