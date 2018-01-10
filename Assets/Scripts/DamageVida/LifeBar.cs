@@ -19,6 +19,7 @@ public class LifeBar : MonoBehaviour {
     //edit guille
     [Header("----- REFERENCIAS")]
 	public Image healthBar;
+    public Image healthBarBackground;
 	public Text ratioText;
     public GameObject cam1;
     public GameObject cam2;
@@ -43,6 +44,8 @@ public class LifeBar : MonoBehaviour {
 	void Update () {
 		if (hitpoint <= 0) {
             anim.SetBool("isDead", true);
+            GetComponent<Movimiento>().enabled = false;
+            GetComponent<Sense>().enabled = false;
             StartCoroutine(Muerte());
 		}
 	}
