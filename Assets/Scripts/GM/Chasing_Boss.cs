@@ -9,6 +9,7 @@ public class Chasing_Boss: MonoBehaviour {
 	[Header("----- REFERENCIAS")]
 	public Transform player;
 	public Enemy_01 dep;
+    public GameObject BarraVida;
 
 	[Header("----- SONIDOS")]
 
@@ -70,6 +71,7 @@ public class Chasing_Boss: MonoBehaviour {
 	private void RoarEnd(){
 		anim.SetBool("isRoar", false);
 		anim.SetBool("isIdle", true);
-		GetComponent<Chasing_Boss2>().enabled = true;
+        BarraVida.SetActive(true);
+        GetComponent<Chasing_Boss2>().enabled = true;
 	}
 }
