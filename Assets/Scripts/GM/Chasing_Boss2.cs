@@ -10,8 +10,9 @@ public class Chasing_Boss2: MonoBehaviour {
 	public Transform player;
 	public Enemy_Boss dep;
 	public GameObject PartPisada;
+    public GameObject PartSwipe;
 
-	[Header("----- SONIDOS")]
+    [Header("----- SONIDOS")]
 
 	[Header("----- OTROS")]
 	public float EnemySpeed;
@@ -112,4 +113,15 @@ public class Chasing_Boss2: MonoBehaviour {
 		PartPisada.SetActive(false);
 		GetComponent<SphereCollider> ().enabled = false;
 	}
+    public void swipe()
+    {
+        PartSwipe.SetActive(true);
+        GetComponent<SphereCollider>().enabled = true;
+    }
+    public void swipeOff()
+    {
+        PartSwipe.SetActive(false);
+        GetComponent<SphereCollider>().enabled = false;
+    }
+
 }

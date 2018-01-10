@@ -44,6 +44,16 @@ public class Enemy_Boss : MonoBehaviour
     void Update()
     {
 		healthBar.fillAmount = vida / vidaMaxima;
+        if (vida <= 6)
+        {
+            anim.SetBool("isFase1", false);
+
+        }
+        else
+        {
+            anim.SetBool("isFase1", true);
+        }
+
     }
 
 
