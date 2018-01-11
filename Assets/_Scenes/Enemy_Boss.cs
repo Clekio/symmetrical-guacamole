@@ -95,6 +95,11 @@ public class Enemy_Boss : MonoBehaviour
 
     }
 
+    public void Ataque()
+    {
+        source.PlayOneShot(muerto, 0.3f);
+    }
+
     public void paso()
     {
 

@@ -61,7 +61,7 @@ public class Chasing_Boss: MonoBehaviour {
 
 
 	//Locura
-	private void Roar(){
+	public void Roar(){
         //EJECUTAR SONIDO AQUI
 
         source.PlayOneShot(grito, 0.5f);

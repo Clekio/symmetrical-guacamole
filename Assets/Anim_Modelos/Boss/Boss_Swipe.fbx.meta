@@ -174,6 +174,20 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.1888112
+        functionName: Stop
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4539368
+        functionName: Ataque
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.49606302
         functionName: swipe
         data: 
@@ -183,6 +197,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.57086617
         functionName: swipeOff
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8863637
+        functionName: NonStop
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

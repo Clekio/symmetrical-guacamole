@@ -76,7 +76,7 @@ public class Chasing_Boss2: MonoBehaviour {
 		{
 			if (death == false)
 			{
-                Debug.Log("pene");
+                
 
 				other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
 			}
@@ -116,12 +116,12 @@ public class Chasing_Boss2: MonoBehaviour {
     public void swipe()
     {
         PartSwipe.SetActive(true);
-        GetComponent<SphereCollider>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
     }
     public void swipeOff()
     {
         PartSwipe.SetActive(false);
-        GetComponent<SphereCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
     }
 
 }
