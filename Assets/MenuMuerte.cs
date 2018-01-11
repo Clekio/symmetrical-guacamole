@@ -13,6 +13,10 @@ public class MenuMuerte : MonoBehaviour {
     {
         SceneManager.LoadScene("MENU");
     }
+    public void level2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
     public void Quit()
     {
         Application.Quit();
