@@ -30,6 +30,8 @@ public class Enemy_Boss : MonoBehaviour
     public AudioClip muerto;
 
     public AudioClip blood;
+
+    public GameObject WIN;
     //Cosas guille
 
     // Use this for initialization
@@ -53,6 +55,12 @@ public class Enemy_Boss : MonoBehaviour
         {
             anim.SetBool("isFase1", true);
         }
+        if (vida <= 0)
+        {
+
+            WIN.SetActive(true);
+        }
+
 
     }
 
