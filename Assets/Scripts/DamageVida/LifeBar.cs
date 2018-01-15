@@ -23,6 +23,7 @@ public class LifeBar : MonoBehaviour {
 	public Text ratioText;
     public GameObject cam1;
     public GameObject cam2;
+    public GameObject sangre;
 
     //Cosas muerte mirar void update
 
@@ -60,7 +61,7 @@ public class LifeBar : MonoBehaviour {
 	public void TakeDamage (float damage)
     {
         source.PlayOneShot(Pain, 0.2f);
-
+        StartCoroutine(Sangre());
         feedback.SetActive(true);
 
         StartCoroutine(Count1());
@@ -104,6 +105,15 @@ public class LifeBar : MonoBehaviour {
         Time.timeScale = 0;
         die.SetActive(true);
         alive = false;
+
+
+        yield return null;
+    }
+    IEnumerator Sangre()
+    {
+        sangre.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        sangre.SetActive(false);
 
 
         yield return null;
