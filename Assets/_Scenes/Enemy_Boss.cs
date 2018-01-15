@@ -70,11 +70,10 @@ public class Enemy_Boss : MonoBehaviour
         if (Weapon.gameObject.tag == "Weapon")
         {
             vida = vida - 1;
-
+            StartCoroutine(Sangre());
             if (vida == 0)
             {
                 source.PlayOneShot(muerto, 0.15f);
-
                 dep = true;
 
                 GetComponent<CapsuleCollider>().enabled = false;
@@ -120,6 +119,15 @@ public class Enemy_Boss : MonoBehaviour
 
         source.PlayOneShot(stomp1, 0.7f);
 
+    }
+    IEnumerator Sangre()
+    {
+        sangre.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        sangre.SetActive(false);
+
+
+        yield return null;
     }
 
 
