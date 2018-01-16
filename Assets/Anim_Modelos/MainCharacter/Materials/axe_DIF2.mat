@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: axe_DIF2
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 51ad79d34856bf04198299c51301e351, type: 3}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -94,6 +94,6 @@ Material:
     - _WorldScale: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.77205884, g: 0.77205884, b: 0.77205884, a: 1}
+    - _Color: {r: 1, g: 0.8385597, b: 0.8385597, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 0, g: 1, b: 0, a: 1}
+    - _OutlineColor: {r: 1, g: 0.60294116, b: 0.60294116, a: 1}

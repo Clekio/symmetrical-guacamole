@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuMuerte : MonoBehaviour {
 
-	// Use this for initialization
-	public void Retry () {
+
+    private void Start()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    // Use this for initialization
+    public void Retry () {
         SceneManager.LoadScene("Tutorial");
 	}
     public void Menu()
