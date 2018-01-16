@@ -10,6 +10,8 @@ public class CloseDoors : MonoBehaviour
 
     public DoorsEvent close;
 
+    public GameObject cerrarP;
+
     // Use this for initialization
     void Start()
     {
@@ -34,7 +36,7 @@ public class CloseDoors : MonoBehaviour
         if (other.tag == "Player")
 
         {
-          
+            cerrarP.SetActive(true);
             close.close = true;
         }
     }

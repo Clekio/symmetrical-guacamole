@@ -20,6 +20,8 @@ public class Enemy_01 : MonoBehaviour {
 
     public bool dep = false;
 
+    public Chasing_Bomb dodamage;
+
     public AudioClip blood;
 	//Cosas guille
 
@@ -72,7 +74,7 @@ public class Enemy_01 : MonoBehaviour {
 
         } else if (Weapon.gameObject.tag == "Bomba")
         {
-            if (dep == false)
+            if (dep == false && dodamage.damaging == true)
             {
                 dep = true;
 

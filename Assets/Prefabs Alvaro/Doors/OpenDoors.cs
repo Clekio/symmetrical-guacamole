@@ -10,6 +10,10 @@ public class OpenDoors : MonoBehaviour {
 
     public float contador;
 
+    public GameObject puerta;
+
+    private bool done = false;
+
     // Use this for initialization
     void Start () {
 		
@@ -22,9 +26,25 @@ public class OpenDoors : MonoBehaviour {
         {
             inside = true;
 
+            if (done == false)
+            {
+                EventoDoor();
+
+            }
+
+            
 
         }
     }
+
+
+    public void EventoDoor()
+    {
+        done = true;
+        puerta.SetActive(false);
+
+    }
+
 
 
 
@@ -33,6 +53,8 @@ public class OpenDoors : MonoBehaviour {
         if (other.tag == "Player")
         {
             inside = true;
+
+            
 
             door.SonidoPuertaAbierta();
 
