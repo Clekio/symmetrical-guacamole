@@ -18,7 +18,7 @@ public class Chasing_Bomb: MonoBehaviour {
 
 
     //Para hacer daño
-    public bool damaging;
+    public bool damaging = false;
 	public float damage;
 
 	// Use this for initialization
@@ -97,7 +97,8 @@ public class Chasing_Bomb: MonoBehaviour {
 	}
 	private void attacking ()
 	{
-		GetComponent<SphereCollider>().enabled = true;
+        damaging = true;
+        GetComponent<SphereCollider>().enabled = true;
 		GetComponent<Radio>().enabled = false;
 	}
 
@@ -108,6 +109,7 @@ public class Chasing_Bomb: MonoBehaviour {
     }
 	private void Radio ()
 	{
+        
 		GetComponent<Radio>().enabled = true;
 		GetComponent<Chasing_Bomb>().enabled = false;
 	}

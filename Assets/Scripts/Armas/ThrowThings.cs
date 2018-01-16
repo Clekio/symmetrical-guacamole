@@ -32,9 +32,9 @@ public class ThrowThings : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        source.PlayOneShot(broken, 0.2f);
+        Instantiate(prefab, spawn.position, spawn.rotation);
 
-        StartCoroutine(Count1());
+        Destroy(this.gameObject);
 
         //Destroy(this.gameObject);
     }
@@ -47,14 +47,14 @@ public class ThrowThings : MonoBehaviour {
     //}
 
 
-    IEnumerator Count1()
-    {
-        yield return new WaitForSeconds(0.2f);
+    //IEnumerator Count1()
+    //{
+    //    yield return new WaitForSeconds(0.2f);
 
-        Instantiate(prefab, spawn.position, spawn.rotation);
+    //    Instantiate(prefab, spawn.position, spawn.rotation);
 
-        Destroy(this.gameObject);
+    //    Destroy(this.gameObject);
 
-        yield return null;
-    }
+    //    yield return null;
+    //}
 }
