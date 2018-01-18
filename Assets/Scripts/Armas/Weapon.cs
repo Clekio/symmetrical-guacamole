@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour {
 
         if (Pickable == true && coger.hasWeapon == false)
         {
-            if (XCI.GetButton(XboxButton.B, controller))
+            if (XCI.GetButton(XboxButton.B, controller) || Input.GetKeyDown(KeyCode.K))
             {
                 coger.SonidoCogerArma();
 
