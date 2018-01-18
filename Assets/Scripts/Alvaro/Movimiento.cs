@@ -98,39 +98,43 @@ public class Movimiento : MonoBehaviour {
 
 
 
-    void CheckAttack() {
+    void CheckAttack()
+    {
         if (hasWeapon == true)
         {
             Axe.GetComponent<SkinnedMeshRenderer>().enabled = true;
 
-            if (canAttack == true && XCI.GetButton(XboxButton.X, controller))
+            if (canAttack == true && (XCI.GetButton(XboxButton.X, controller) || Input.GetKeyDown(KeyCode.J)))
             {
                 anim.SetTrigger("Attack");
                 canAttack = false;
                 attacking = true;
             }
-            if (canAttack == true && XCI.GetButton(XboxButton.Y, controller))
+            if (canAttack == true && (XCI.GetButton(XboxButton.Y, controller) || Input.GetKeyDown(KeyCode.L)))
             {
-                
+
                 anim.SetTrigger("Lanzar");
                 canAttack = false;
                 attacking = true;
                 //hasWeapon = false;
             }
-        }else
+        }
+        else
         {
             Axe.GetComponent<SkinnedMeshRenderer>().enabled = false;
             if (canWeapon == true)
             {
-                if (XCI.GetButton(XboxButton.B, controller))
+                if (XCI.GetButton(XboxButton.B, controller) || Input.GetKeyDown(KeyCode.K))
                 {
-                    hasWeapon = true;
+                    {
+                        hasWeapon = true;
+                    }
                 }
             }
+
+
+
         }
-
-        
-
     }
 
     void GetInput()
@@ -160,8 +164,10 @@ public class Movimiento : MonoBehaviour {
 
     private void Move()
     {
-        transform.position += (input.x * Vector3.right + input.y*Vector3.forward) * speed * Time.deltaTime;
+        
 
+            transform.position += (input.x * Vector3.right + input.y * Vector3.forward) * speed * Time.deltaTime;
+        
     
     }
 
@@ -169,7 +175,7 @@ public class Movimiento : MonoBehaviour {
     {
         source.PlayOneShot(stepSound, 0.005f);
     }
-    public float speedAttackMove = 8;
+    public float speedAttackMove = 18;
     public void AttackMove()
     {
         transform.position += transform.forward * speedAttackMove * Time.deltaTime;

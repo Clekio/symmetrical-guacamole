@@ -23,6 +23,9 @@ public class Enemy_01 : MonoBehaviour {
     public Chasing_Bomb dodamage;
 
     public AudioClip blood;
+
+    public bool ruido = false;
+
 	//Cosas guille
 
     // Use this for initialization
@@ -58,8 +61,11 @@ public class Enemy_01 : MonoBehaviour {
             if (romperArma != null)
                 romperArma.hasDamaged = true;
 
-            source.PlayOneShot(blood, 0.15f);
-
+            if (ruido == false)
+            {
+                ruido = true;
+                source.PlayOneShot(blood, 0.15f);
+            }
             sangre.SetActive(true);
 
             drop.SetActive(true);
@@ -69,7 +75,8 @@ public class Enemy_01 : MonoBehaviour {
             rb.isKinematic = true;
 
 
-            anim.SetBool("isDead", true);
+                anim.SetBool("isDead", true);
+            
             //GetComponent<Chasing>().enabled = false;
 
         } else if (Weapon.gameObject.tag == "Bomba")

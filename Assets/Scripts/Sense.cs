@@ -21,7 +21,7 @@ public class Sense : MonoBehaviour
 
     private void Update()
     {
-        if (XCI.GetButtonDown(XboxButton.Y, controller) || XCI.GetButtonDown(XboxButton.X, controller))
+        if (XCI.GetButtonDown(XboxButton.Y, controller) || XCI.GetButtonDown(XboxButton.X, controller) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))
         {
             // if only one, attack that one
 

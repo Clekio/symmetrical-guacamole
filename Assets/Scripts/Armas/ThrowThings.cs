@@ -8,7 +8,7 @@ public class ThrowThings : MonoBehaviour {
 
     public Movimiento direction;
 
-    private AudioSource source;
+    
 
     public Transform spawn;
 
@@ -19,7 +19,7 @@ public class ThrowThings : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        source = GetComponent<AudioSource>();
+        
 
         
 
