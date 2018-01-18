@@ -31,6 +31,8 @@ public class Enemy_Boss : MonoBehaviour
 
     public AudioClip blood;
 
+    public bool ruido = false;
+
     public GameObject WIN;
     //Cosas guille
 
@@ -89,17 +91,31 @@ public class Enemy_Boss : MonoBehaviour
             if (romperArma != null)
                 romperArma.hasDamaged = true;
 
-            source.PlayOneShot(blood, 0.15f);
 
+            if (ruido == false)
+            {
+                ruido = true;
+
+                StartCoroutine(Count2());
+                source.PlayOneShot(blood, 0.15f);
+            }
             //sangre.SetActive(true);
 
             //drop.SetActive(true);
 
 
-
+        
 
         }
 
+    }
+
+    IEnumerator Count2()
+    {
+
+        yield return new WaitForSeconds(0.5f);
+        ruido = false;
+        yield return null;
     }
 
     public void Ataque()
