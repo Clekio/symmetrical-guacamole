@@ -77,6 +77,7 @@ public class Chasing_Ranged: MonoBehaviour {
 		{
             if (death == false)
             {
+                Debug.Log("pene2");
                 other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
             }
 		}

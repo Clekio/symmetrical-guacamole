@@ -96,7 +96,7 @@ public class Chasing : MonoBehaviour {
     public void Hit()
 	{ 
 		GetComponent<BoxCollider>().enabled = true;
-        source.PlayOneShot(dodamage, 0.06f);
+        source.PlayOneShot(dodamage, 0.1f);
 
     }
 	public void EndHit()

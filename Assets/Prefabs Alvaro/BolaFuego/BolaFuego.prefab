@@ -210,13 +210,13 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -240,7 +240,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &114001789421865154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,7 +255,7 @@ MonoBehaviour:
   rb: {fileID: 54396183469912210}
   direction: {fileID: 0}
   damaging: 1
-  damage: 3000
+  damage: 1500
   fire: {fileID: 8300000, guid: 6734892884c915048a12649556b01409, type: 3}
 --- !u!198 &198295130351737364
 ParticleSystem:
