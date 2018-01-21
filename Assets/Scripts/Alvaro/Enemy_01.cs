@@ -64,7 +64,7 @@ public class Enemy_01 : MonoBehaviour {
             if (ruido == false)
             {
                 ruido = true;
-                source.PlayOneShot(blood, 0.15f);
+                source.PlayOneShot(blood, 0.40f);
             }
             sangre.SetActive(true);
 

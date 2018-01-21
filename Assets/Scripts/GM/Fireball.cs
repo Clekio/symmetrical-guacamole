@@ -21,7 +21,7 @@ public class Fireball : MonoBehaviour {
 
         source = GetComponent<AudioSource>();
 
-        source.PlayOneShot(fire, 0.1f);
+        source.PlayOneShot(fire, 0.2f);
     }
 
 
@@ -33,7 +33,7 @@ public class Fireball : MonoBehaviour {
     {
             if (other.tag == "Player")
             {
-
+            Debug.Log("pene");
                     other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
 
 

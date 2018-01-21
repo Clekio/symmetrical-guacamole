@@ -173,7 +173,7 @@ public class Movimiento : MonoBehaviour {
 
     public void Paso()
     {
-        source.PlayOneShot(stepSound, 0.005f);
+        source.PlayOneShot(stepSound, 0.01f);
     }
     public float speedAttackMove = 18;
     public void AttackMove()
@@ -214,7 +214,7 @@ public class Movimiento : MonoBehaviour {
     {
         
         float vol = Random.Range(volLowRange, volHighRange);
-        source.PlayOneShot(AttackSound, vol);
+        source.PlayOneShot(AttackSound, 0.06f);
     }
 
     public void Slashed()
