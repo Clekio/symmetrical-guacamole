@@ -31,7 +31,7 @@ MonoBehaviour:
   antialiasing:
     m_Enabled: 0
     m_Settings:
-      method: 1
+      method: 0
       fxaaSettings:
         preset: 2
       taaSettings:
@@ -118,14 +118,14 @@ MonoBehaviour:
         neutralBlackOut: 0
         neutralWhiteOut: 10
         neutralWhiteLevel: 5.3
-        neutralWhiteClip: 7
+        neutralWhiteClip: 10
       basic:
         postExposure: 0
         temperature: 16
         tint: 1
         hueShift: 1
         saturation: 1
-        contrast: 1.05
+        contrast: 1.3
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -299,7 +299,7 @@ MonoBehaviour:
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
       intensity: 0.4
-      smoothness: 0.3
+      smoothness: 0.2
       roundness: 1
       mask: {fileID: 0}
       opacity: 1
