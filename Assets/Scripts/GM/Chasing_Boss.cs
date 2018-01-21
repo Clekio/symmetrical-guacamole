@@ -64,7 +64,7 @@ public class Chasing_Boss: MonoBehaviour {
 	public void Roar(){
         //EJECUTAR SONIDO AQUI
 
-        source.PlayOneShot(grito, 0.5f);
+        source.PlayOneShot(grito, 0.4f);
 
 
     }
