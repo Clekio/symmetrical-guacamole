@@ -34,6 +34,12 @@ public class Enemy_Boss : MonoBehaviour
     public bool ruido = false;
 
     public GameObject WIN;
+
+
+    //public Transform spawn;
+
+    //public GameObject prefab;
+
     //Cosas guille
 
     // Use this for initialization
@@ -132,7 +138,7 @@ public class Enemy_Boss : MonoBehaviour
 
     public void stomp()
     {
-
+        //Instantiate(prefab, spawn.position, spawn.rotation);
         source.PlayOneShot(stomp1, 0.7f);
 
     }

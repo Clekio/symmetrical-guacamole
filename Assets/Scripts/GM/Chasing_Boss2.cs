@@ -28,8 +28,14 @@ public class Chasing_Boss2: MonoBehaviour {
 	public bool damaging;
 	public float damage;
 
-	// Use this for initialization
-	void Start () {
+
+    public Transform spawn;
+
+    public GameObject prefab;
+
+
+    // Use this for initialization
+    void Start () {
 		anim = GetComponent<Animator> ();
 		GetComponent<Chasing_Boss> ().enabled = false;
 	}
@@ -106,21 +112,22 @@ public class Chasing_Boss2: MonoBehaviour {
 
 	//}
 	public void pisoton(){
-		PartPisada.SetActive(true);
+		//PartPisada.SetActive(true);
 		GetComponent<SphereCollider> ().enabled = true;
-	}
+        Instantiate(prefab, spawn.position, spawn.rotation);
+    }
 	public void pisotonOff(){
-		PartPisada.SetActive(false);
+		//PartPisada.SetActive(false);
 		GetComponent<SphereCollider> ().enabled = false;
 	}
     public void swipe()
     {
-        PartSwipe.SetActive(true);
+        //PartSwipe.SetActive(true);
         GetComponent<BoxCollider>().enabled = true;
     }
     public void swipeOff()
     {
-        PartSwipe.SetActive(false);
+        //PartSwipe.SetActive(false);
         GetComponent<BoxCollider>().enabled = false;
     }
 

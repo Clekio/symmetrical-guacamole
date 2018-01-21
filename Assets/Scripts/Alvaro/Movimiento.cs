@@ -213,7 +213,7 @@ public class Movimiento : MonoBehaviour {
     public void ActivateSound()
     {
         
-        float vol = Random.Range(volLowRange, volHighRange);
+        //float vol = Random.Range(volLowRange, volHighRange);
         source.PlayOneShot(AttackSound, 0.06f);
     }
 
