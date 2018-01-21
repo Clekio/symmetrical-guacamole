@@ -5,11 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class MenuMuerte : MonoBehaviour {
 
+    public static bool GameIsCredited = false;
+
+    //estas referencias son solo para el menu de inicio
+    public GameObject creditCam;
+    public GameObject Cam;
+    public GameObject eventsys;
+    public GameObject creditText;
+
+
 
     private void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void Update()
+    {
+        if (GameIsCredited)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
+            {
+                eventsys.SetActive(true);
+                creditCam.SetActive(false);
+                Cam.SetActive(true);
+                creditText.SetActive(false);
+                GameIsCredited = false;
+            }
+        }
     }
 
     // Use this for initialization
@@ -31,6 +55,15 @@ public class MenuMuerte : MonoBehaviour {
     public void level3()
     {
         SceneManager.LoadScene("Level 3");
+    }
+
+    public void credit()
+    {
+        eventsys.SetActive(false);
+        creditCam.SetActive(true);
+        Cam.SetActive(false);
+        creditText.SetActive(true);
+        GameIsCredited = true;
     }
 
 
