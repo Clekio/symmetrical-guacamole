@@ -31,15 +31,15 @@ public class Fireball : MonoBehaviour {
     }
     public void OnTriggerEnter(Collider other)
     {
-            if (other.tag == "Player")
+            if (other.tag == "Player" || other.tag == "Enemy")
             {
             Debug.Log("pene");
                     other.SendMessage((damaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
 
-
-            }
+            Destroy(this.gameObject);
+        }
 
         
-        Destroy(this.gameObject);
+        
     }
 }
