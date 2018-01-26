@@ -161,11 +161,9 @@ public class Enemy_Boss1 : MonoBehaviour
     {
         bodyPlay.SetActive(false);
         creditCam.SetActive(true);
-        Cam.SetActive(false);
 
         yield return new WaitForSeconds(6f);
         creditCam.SetActive(false);
-        Cam.SetActive(true);
         WIN.SetActive(true);
         myScript.GetComponent<Enemy_Boss1>().enabled = false;
 
