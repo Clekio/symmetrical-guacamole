@@ -40,6 +40,14 @@ public class MenuMuerte : MonoBehaviour {
     public void Retry () {
         SceneManager.LoadScene("Tutorial");
 	}
+    public void Retry2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
+    public void Retry3()
+    {
+        SceneManager.LoadScene("Level 3");
+    }
     public void Menu()
     {
         SceneManager.LoadScene("MENU");
