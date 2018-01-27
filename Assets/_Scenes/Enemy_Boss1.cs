@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Enemy_Boss1 : MonoBehaviour
 {
@@ -72,7 +73,6 @@ public class Enemy_Boss1 : MonoBehaviour
         if (vida <= 0)
         {
             StartCoroutine(Creditos());
-            StartCoroutine(Creditos2());
 
         }
 
@@ -160,19 +160,9 @@ public class Enemy_Boss1 : MonoBehaviour
     }
     IEnumerator Creditos()
     {   movScript.GetComponent<Movimiento>().enabled = false;
-        yield return new WaitForSeconds(2f);
         creditCam.SetActive(true);
-
-        yield return null;
-    }
-    IEnumerator Creditos2()
-    {
-        yield return new WaitForSeconds(8f);
-        creditCam.SetActive(false);
-        WIN.SetActive(true);
-        myScript.GetComponent<Enemy_Boss1>().enabled = false;
-        Time.timeScale = 0;
-
+        yield return new WaitForSeconds(6f);
+        SceneManager.LoadScene("MENUWin");
 
         yield return null;
     }
