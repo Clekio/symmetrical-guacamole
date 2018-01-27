@@ -39,6 +39,7 @@ public class Enemy_Boss1 : MonoBehaviour
     public GameObject WIN;
 
     public GameObject myScript;
+    public GameObject movScript;
 
 
     //public Transform spawn;
@@ -71,7 +72,8 @@ public class Enemy_Boss1 : MonoBehaviour
         if (vida <= 0)
         {
             StartCoroutine(Creditos());
-  
+            StartCoroutine(Creditos2());
+
         }
 
 
@@ -157,19 +159,16 @@ public class Enemy_Boss1 : MonoBehaviour
         yield return null;
     }
     IEnumerator Creditos()
-    {
+    {   movScript.GetComponent<Movimiento>().enabled = false;
         yield return new WaitForSeconds(2f);
         creditCam.SetActive(true);
-        Cam.SetActive(false);
-        StartCoroutine(Creditos2());
 
         yield return null;
     }
     IEnumerator Creditos2()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(8f);
         creditCam.SetActive(false);
-        Cam.SetActive(true);
         WIN.SetActive(true);
         myScript.GetComponent<Enemy_Boss1>().enabled = false;
         Time.timeScale = 0;
